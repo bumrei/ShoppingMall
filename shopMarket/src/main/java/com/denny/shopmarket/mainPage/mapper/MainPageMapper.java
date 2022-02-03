@@ -13,4 +13,6 @@ public interface MainPageMapper {
 
     List<ItemVo> selectList();
 
+    ItemVo select(int itemNo);
+
 }

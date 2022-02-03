@@ -56,4 +56,13 @@ public class MainPageMapperTest {
 
     }
 
+    @Test
+    public void selectTest() {
+        int itemNo = 48;
+
+        ItemVo itemVo = mainPageMapper.select(itemNo);
+
+        log.info(itemVo);
+    }
+
 }

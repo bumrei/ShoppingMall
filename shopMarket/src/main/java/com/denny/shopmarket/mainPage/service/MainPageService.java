@@ -14,6 +14,8 @@ public interface MainPageService {
 
     List<ItemDTO> getList();
 
+    ItemDTO getRead(int itemNo);
+
 
 
     default ItemVo dtoToVo(ItemDTO itemDTO) {

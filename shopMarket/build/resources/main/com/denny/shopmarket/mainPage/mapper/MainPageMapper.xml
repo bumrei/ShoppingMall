@@ -54,4 +54,15 @@
         order by item.itemNo desc
     </select>
 
+    <select id="select" resultMap="itemMap">
+        select
+            *
+        from
+            tbl_item item
+                left join tbl_attach attach
+                          on item.itemNo = attach.itemNo
+        where item.itemNo = #{itemNo}
+        order by item.itemNo desc
+    </select>
+
 </mapper>

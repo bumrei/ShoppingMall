@@ -1,230 +1,326 @@
-<%@include file="../includes/header.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResStore | Ecommerce Website Design</title>
 
-<style>
-    #itemMainSearch{
-        width: 60%;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 
-    #goSearch{
-        background-color: #f5f57d;
-    }
-</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
 
-<!-- Masthead-->
-<header class="masthead">
+    <link rel="stylesheet" href="../../../resources/shopCreated/css/style.css"></link>
+
+</head>
+<body>
+
+<div class="header">
     <div class="container">
-        <div class="masthead-subheading">Enjoy your Shopping!!</div>
-        <form action="/mainPage/itemList" method="get">
-            <input type="text" id="itemMainSearch" name="shopSearch" placeholder="찾고 싶은 물건을 검색해 보세요.">
-            <button type="submit" id="goSearch">검색</button>
-        </form>
-    </div>
-</header>
-
-<!-- 설날을 위한 메인 이벤트!!-->
-<section class="page-section bg-light" id="portfolio">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">설날을 위한 메인 이벤트</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../../../resources/shopCreated/images/logo.png" alt="" width="125px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+            <a href=""><img src="../../../resources/shopCreated/images/cart.png" width="30px" height="30px"></a>
+            <img src="../../../resources/shopCreated/images/menu.png" class="menu-icon" onclick="javascript:menutoggle()">
         </div>
+
+
         <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="javascript:fncReadItem('커피머신')">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder" style="color: black">Fancy Product</h5>
-                                <!-- Product price-->
-                                <p style="color: black">$40.00 - $80.00</p>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
-                    </a>
-                </div>
+            <div class="col-2">
+                <h1>Give Your Workout<br>A New Style</h1>
+                <p> wellcome on board!!<br>this is amazying shopping for where you can find the perfect and suit clothes for ya!!!! </p>
+                <a href="" class="btn">Explore Now &#8594;</a>
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="javascript:fncReadItem('커피머신')">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder" style="color: black">Fancy Product</h5>
-                                <!-- Product price-->
-                                <p style="color: black">$40.00 - $80.00</p>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="card h-100">
-                    <a href="javascript:fncReadItem('커피머신')">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder" style="color: black">Fancy Product</h5>
-                                <!-- Product price-->
-                                <p style="color: black">$40.00 - $80.00</p>
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
-                    </a>
-                </div>
+            <div class="col-2">
+                <img src="../../../resources/shopCreated/images/image1.png" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- 회원님을 위한 추천 리스트-->
-<section class="page-section bg-light" id="portfolio">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">회원님을 위한 추천!!</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
+<!-- -------- featured categories --------- -->
+<div class="categories">
+    <div class="small-container">
         <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 1-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link"  href="javascript:fncReadItem('모니터받침대')">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="../../../resources/assets/img/portfolio/1.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">모니터받침대</div>
-                        <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                    </div>
-                </div>
+            <div class="col-3">
+                <img src="../../../resources/shopCreated/images/category-1.jpg">
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link"  href="javascript:fncReadItem('키보드')">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="../../../resources/assets/img/portfolio/2.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">키보드</div>
-                        <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                    </div>
-                </div>
+            <div class="col-3">
+                <img src="../../../resources/shopCreated/images/category-2.jpg">
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link"  href="javascript:fncReadItem('로드바이크')">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="../../../resources/assets/img/portfolio/3.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">로드바이크</div>
-                        <div class="portfolio-caption-subheading text-muted">Identity</div>
-                    </div>
-                </div>
+            <div class="col-3">
+                <img src="../../../resources/shopCreated/images/category-3.jpg">
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- 인기 Top 10 제품 소개 리스트 -->
-<section class="page-section bg-light" id="portfolio">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">인기 Top 10 제품!!</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<!-- -- featured products -- -->
+<div class="small-container">
+    <h2 class="title">Feature Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-1.jpg">
+            <h4>Red printed T-shrirt</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>$50.00</p>
         </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-2.jpg">
+            <h4>Perfect Shoes</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-3.jpg">
+            <h4>Goody pants</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-4.jpg">
+            <h4>Blue printed T-shrirt</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+    </div>
+
+    <h2 class="title">Latest Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-5.jpg">
+            <h4>Red printed T-shrirt</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-6.jpg">
+            <h4>Perfect Shoes</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-7.jpg">
+            <h4>Goody pants</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-8.jpg">
+            <h4>Blue printed T-shrirt</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-9.jpg">
+            <h4>Red printed T-shrirt</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-10.jpg">
+            <h4>Perfect Shoes</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-11.jpg">
+            <h4>Goody pants</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="../../../resources/shopCreated/images/product-12.jpg">
+            <h4>Blue printed T-shrirt</h4>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+    </div>
+</div>
+
+<!-- ------ offer ------ -->
+<div class="offer">
+    <div class="small-container">
         <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 1-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link"  href="javascript:fncReadItem('핸드폰거치대')">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="../../../resources/assets/img/portfolio/1.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">핸드폰거치대</div>
-                        <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                    </div>
-                </div>
+            <div class="col-2">
+                <img src="../../../resources/shopCreated/images/exclusive.png" class="offer-img">
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link"  href="javascript:fncReadItem('스노우보드')">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="../../../resources/assets/img/portfolio/2.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">스노우보드</div>
-                        <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link"  href="javascript:fncReadItem('클라이밍수강권')">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="../../../resources/assets/img/portfolio/3.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">클라이밍수강권</div>
-                        <div class="portfolio-caption-subheading text-muted">Identity</div>
-                    </div>
-                </div>
+            <div class="col-2">
+                <p>Exclusively Available on ResStore</p>
+                <h1>Samrt Band 4</h1>
+                <small>this is the perfectto and amzino producto haha yeah excactly quite great i like this website amazing yeah whellcome hahahaha hohohohohoho</small>
+
+                <a href="" class="btn">Buy Now &#8594;</a>
             </div>
         </div>
     </div>
-</section>
+</div>
 
+<!-- ------- testimomial -------- -->
 
-<%@include file="../includes/footer.jsp"%>
+<div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <img src="../../../resources/shopCreated/images/user-1.png" alt="">
+                <h3>Sean Parker</h3>
+            </div>
 
-<script>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <img src="../../../resources/shopCreated/images/user-2.png" alt="">
+                <h3>Miker Smith</h3>
+            </div>
 
-    // 아래 item 리스트중 물건을 하나 클릭하면 모달이 아닌 새탭으로 이동하게 만들었다.
-    function fncReadItem(item) {
-        let win;
-        win = window.open("/mainPage/itemReadPage?item=" + item)
-        win.onbeforeunload = function () {
-            console.log("윈도우 꺼짐")
-        }
-    }
-</script>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <img src="../../../resources/shopCreated/images/user-3.png" alt="">
+                <h3>Mabel Joe</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------- brands ----------------->
+
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="../../../resources/shopCreated/images/logo-godrej.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="../../../resources/shopCreated/images/logo-oppo.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="../../../resources/shopCreated/images/logo-coca-cola.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="../../../resources/shopCreated/images/logo-paypal.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="../../../resources/shopCreated/images/logo-philips.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<%@include file="../includes2/footer.jsp" %>
 
 
 </body>

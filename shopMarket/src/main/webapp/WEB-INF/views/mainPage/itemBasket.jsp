@@ -1,20 +1,84 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bumre
-  Date: 2022-01-22
-  Time: 오후 5:06
-  To change this template use File | Settings | File Templates.
---%>
+<%@include file="../includes2/header.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 
-<h1>여기는 장바구니가 될 페이지</h1>
+<!-- cart item details -->
 
-<h3>장바구니에 등록된 물품의 목록을 CRUD 가 가능한 테이블로 구현합니다.</h3>
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="../../../resources/shopCreated/images/buy-1.jpg">
+                    <div>
+                        <p>Reds Printed T-Shirt</p>
+                        <small>Price: $50.00</small>
+                        <br>
+                        <a href="#">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1" min="1"></td>
+            <td>$50.00</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="../../../resources/shopCreated/images/buy-2.jpg">
+                    <div>
+                        <p>Reds Printed T-Shirt</p>
+                        <small>Price: $50.00</small>
+                        <br>
+                        <a href="#">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1" min="1"></td>
+            <td>$132.00</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="../../../resources/shopCreated/images/buy-3.jpg">
+                    <div>
+                        <p>Reds Printed T-Shirt</p>
+                        <small>Price: $50.00</small>
+                        <br>
+                        <a href="#">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1" min="1"></td>
+            <td>$75.00</td>
+        </tr>
+    </table>
+
+    <div class="total-price">
+
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>$257.00</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>$3.00</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>$260.00</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+
+<%@include file="../includes2/footer.jsp" %>
 
 </body>
 </html>
