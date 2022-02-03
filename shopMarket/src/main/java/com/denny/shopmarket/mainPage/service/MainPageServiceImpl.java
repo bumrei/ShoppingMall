@@ -60,4 +60,13 @@ public class MainPageServiceImpl implements MainPageService{
 
         return itemDTOList;
     }
+
+    @Override
+    public ItemDTO getRead(int itemNo) {
+
+        log.info("========== MainPageServiceImpl getRead =========");
+        log.info("========== MainPageServiceImpl getRead =========");
+
+        return voToDto(mainPageMapper.select(itemNo));
+    }
 }

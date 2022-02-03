@@ -1,16 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bumre
-  Date: 2022-01-22
-  Time: 오후 5:07
-  To change this template use File | Settings | File Templates.
---%>
+<%@include file="../includes2/header.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 
 <h1>여기는 고객센터가 될 페이지 입니다.</h1>
 
@@ -18,6 +7,8 @@
 <h3>FAQ, Q&A</h3>
 
 <h5><a href="https://jqueryui.com/tabs/">https://jqueryui.com/tabs/</a></h5>
+
+<%@include file="../includes2/footer.jsp" %>
 
 </body>
 </html>

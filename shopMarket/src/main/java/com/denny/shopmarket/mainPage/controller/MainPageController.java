@@ -64,12 +64,12 @@ public class MainPageController {
         return "redirect:/mainPage/itemList2";
     }
 
-    @GetMapping("/homeMainPage2")
+    @GetMapping("/homeMainPage")
     public void getMainPage() {
 
     }
 
-    @GetMapping("/itemList2")
+    @GetMapping("/itemList")
     public void getItemList(HttpServletRequest request, Model model) {
 
         log.info("====== MainPageController getItemList ======");
@@ -95,11 +95,20 @@ public class MainPageController {
         model.addAttribute("searchInfo", searchInfo);
     }
 
-    @GetMapping("/itemReadPage2")
+    @GetMapping("/itemReadPage")
     public void getItemReadPage(@ModelAttribute ItemDTO itemDTO, Model model) {
-        log.info("===============");
-        log.info("item Name = " + itemDTO.getItemNm());
-        model.addAttribute("itemDTO", itemDTO);
+
+        log.info("====== MainPageController getItemReadPage ======");
+        log.info("====== MainPageController getItemReadPage ======");
+
+        log.info("item Name = " + itemDTO.getItemNo());
+
+        ItemDTO productInfo = mainPageService.getRead(itemDTO.getItemNo());
+
+        log.info("productInfo in Controller = " + productInfo);
+
+        model.addAttribute("productInfo", productInfo);
+
     }
 
     @GetMapping("/itemBasket")

@@ -1,53 +1,63 @@
-<%@include file="../includes/header.jsp"%>
+<%@include file="../includes2/header.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!-- Header-->
-<header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Shop in style</h1>
-            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-            <p> you searched ${searchInfo}. How is it? Do you like it? </p>
-        </div>
-    </div>
-</header>
-<!-- Section-->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <c:forEach items="${itemDTOList}" var="dtoList">
-            <div class="col mb-5">
-                <div class="card h-100">
-                    <a href="javascript:fncReadItem('${dtoList.itemNm}')">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="/viewFile?file=${dtoList.itemThumbnail}"/>
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder" style="color: black">${dtoList.itemNm}</h5>
-                            <!-- Product price-->
-                            <p style="color: black">$40.00 - $80.00</p>
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            </c:forEach>
-        </div>
-    </div>
-</section>
+<div class="small-container">
 
-<%@include file="../includes/footer.jsp"%>
+    <%------ Search Area ------%>
+    <div class="row row-2">
+        <h2>All Products</h2>
+        <select>
+            <option>Default Shorting</option>
+            <option>short by price</option>
+            <option>short by popularity</option>
+            <option>short by rating</option>
+            <option>short by sale</option>
+        </select>
+    </div>
+    <%------ / Search Area ------%>
+
+
+    <div class="row">
+        <c:forEach items="${itemDTOList}" var="dto">
+            <div class="col-4">
+                <a href="javascript:fncReadItem('${dto.itemNm}','${dto.itemNo}')">
+                    <c:forEach items="${dto.files}" var="attach">
+                        <img src="/viewFile?file=${attach.fileLink}">
+                    </c:forEach>
+                    <h4>${dto.itemNm}</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>$ ${dto.price}</p>
+                </a>
+            </div>
+        </c:forEach>
+    </div>
+
+
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>&#8594;</span>
+    </div>
+
+</div>
+
+
+<%@include file="../includes2/footer.jsp" %>
 
 <script>
-    function fncReadItem(itemName) {
+    function fncReadItem(itemName, itemNo) {
+        console.log("itemNo = ", itemNo)
         let win;
-        win = window.open("/mainPage/itemReadPage?itemNm=" + itemName);
+        win = window.open("/mainPage/itemReadPage?itemNm=" + itemName + "&itemNo=" + itemNo);
         win.onbeforeunload = function () {
             console.log("윈도우 꺼짐");
         }
@@ -62,6 +72,7 @@
         window.history.replaceState(null, '', '/mainPage/itemList')
     }
 </script>
+
 
 </body>
 </html>
