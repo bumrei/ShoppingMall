@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.denny.shopmarket.mainPage.mapper.MainPageMapper">
+
+    <insert id="insertItem">
+        insert into tbl_item (sellerNo, itemNm, itemCateB, itemCateS, imageCnt) values (#{sellerNo},#{itemNm},#{itemCateB},#{itemCateS}, #{imageCnt})
+
+        <selectKey order="AFTER" resultType="int" keyProperty="itemNo">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <insert id="insertItemAttach">
+        insert into tbl_attach (uuid, itemNo, uploadPath, filename, image, imageUsage)
+        values (#{uuid}, #{itemNo}, #{uploadPath}, #{filename}, #{image} , #{imageUsage})
+    </insert>
+
+
+    <resultMap id="itemMap" type="com.denny.shopmarket.mainPage.vo.ItemVo">
+        <id property="itemNo" column="itemNo"></id>
+        <result property="sellerNo" column="sellerNo"></result>
+        <result property="itemNm" column="itemNm"></result>
+        <result property="itemCateB" column="itemCateB"></result>
+        <result property="itemCateS" column="itemCateS"></result>
+        <result property="regDate" column="regDate"></result>
+        <result property="modDate" column="modDate"></result>
+        <result property="itemStatus" column="itemStatus"></result>
+        <result property="imageCnt" column="imageCnt"></result>
+        <result property="price" column="price"></result>
+
+        <collection property="attachList" resultMap="attachMap"></collection>
+    </resultMap>
+
+    <resultMap id="attachMap" type="com.denny.shopmarket.mainPage.vo.ItemAttach">
+        <result property="uuid" column="uuid"></result>
+        <result property="itemNo" column="itemNo"></result>
+        <result property="filename" column="filename"></result>
+        <result property="image" column="image"></result>
+        <result property="uploadPath" column="uploadPath"></result>
+        <result property="imageUsage" column="imageUsage"></result>
+    </resultMap>
+
+
+    <select id="selectList" resultMap="itemMap">
+        select
+            *
+        from
+            tbl_item item
+                left join tbl_attach attach
+                          on item.itemNo = attach.itemNo
+        where attach.imageUsage = 'itemMain'
+        order by item.itemNo desc
+    </select>
+
+</mapper>
