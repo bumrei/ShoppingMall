@@ -2,13 +2,13 @@ package com.denny.shopmarket.common.config;
 
 import com.denny.shopmarket.mainPage.config.MainPageRootConfig;
 import com.denny.shopmarket.mainPage.config.MainPageServletConfig;
+import com.denny.shopmarket.security.config.SecurityConfig;
+import com.denny.shopmarket.security.config.SecurityServletConfig;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
-import javax.servlet.MultipartConfigElement;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
 
 @Log4j2
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -17,7 +17,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
         log.info("------------ RootConfig 설정 확인 -----------");
         log.info("------------ RootConfig 설정 확인 -----------");
 
-        return new Class[] {RootConfig.class, MainPageRootConfig.class};
+        return new Class[] {RootConfig.class, MainPageRootConfig.class, SecurityConfig.class};
     }
 
     @Override
@@ -26,13 +26,15 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
         log.info("-------- ServletConfig 설정 확인 ----------");
         log.info("-------- ServletConfig 설정 확인 ----------");
 
-        return new Class[] {ServletConfig.class, MainPageServletConfig.class};
+        return new Class[] {ServletConfig.class, MainPageServletConfig.class, SecurityServletConfig.class};
     }
 
     @Override
     protected String[] getServletMappings() {
         return new String[] {"/"}; // 모든애들을 다 받는다.
     }
+
+
 
     @Override
     protected Filter[] getServletFilters() {
