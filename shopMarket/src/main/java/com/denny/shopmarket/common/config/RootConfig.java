@@ -27,9 +27,9 @@ public class RootConfig {
 
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        config.setJdbcUrl("jdbc:mysql://localhost:3306/shopdb");
-        config.setUsername("shopkeeper");
-        config.setPassword("shopkeeper");
+        config.setJdbcUrl("jdbc:mysql://15.164.231.126:3306/TESTDB");
+        config.setUsername("testuser");
+        config.setPassword("testuser");
 
         HikariDataSource dataSource = new HikariDataSource(config);
 
