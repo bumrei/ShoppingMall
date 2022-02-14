@@ -1,0 +1,17 @@
+package com.denny.shopmarket.security.controller;
+
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+@Log4j2
+public class LoginController {
+
+    @GetMapping("customLogin")
+    public void loginCustom() {
+        log.info("custom login .............. LoginController");
+        log.info("custom login .............. LoginController");
+    }
+
+}
