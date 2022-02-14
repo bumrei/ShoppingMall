@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.denny.shopmarket.security.mapper.MemberMapper">
+
+
+    <resultMap id="memberMap" type="com.denny.shopmarket.security.vo.MemberVo">
+        <id property="sellerId" column="sellerId"></id>
+        <result property="sellerNm" column="sellerNm"></result>
+        <result property="sellerPw" column="sellerPw"></result>
+        <result property="enabled" column="enabled"></result>
+        <result property="regDate" column="regDate"></result>
+        <result property="modDate" column="modDate"></result>
+
+        <collection property="roleList" resultMap="memberRoleMap"></collection>
+    </resultMap>
+
+    <resultMap id="memberRoleMap" type="com.denny.shopmarket.security.vo.MemberRoleVo">
+        <result property="sellerId" column="sellerId"></result>
+        <result property="role" column="role"></result>
+    </resultMap>
+
+    <select id="findBySellerId" resultMap="memberMap">
+        select
+            *
+        from tbl_member m inner join
+             tbl_member_role mr
+             on m.sellerId = mr.sellerId
+        where m.sellerId = #{sellerId}
+    </select>
+
+</mapper>
