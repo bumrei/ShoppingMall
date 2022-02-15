@@ -34,9 +34,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/sample/doAll").permitAll() // doAll 경로는 모두가 접근 가능하게 권한 지정
-                                .antMatchers("/sample/doMember").access("hasRole('ROLE_MEMBER')") // doMember 는 ROLE_MEMBER 권한을 가진 사람만 접근 가능
-                                .antMatchers("/sample/doAdmin").access("hasRole('ROLE_ADMIN')");  // doAdmin 은 ROLE_ADMIN 권한을 가진 사람만 접근 가능
+//        http.authorizeRequests().antMatchers("/sample/doAll").permitAll() // doAll 경로는 모두가 접근 가능하게 권한 지정
+//                                .antMatchers("/sample/doMember").access("hasRole('ROLE_MEMBER')") // doMember 는 ROLE_MEMBER 권한을 가진 사람만 접근 가능
+//                                .antMatchers("/sample/doAdmin").access("hasRole('ROLE_ADMIN')");  // doAdmin 은 ROLE_ADMIN 권한을 가진 사람만 접근 가능
         http.formLogin().loginPage("/customLogin").loginProcessingUrl("/login"); // 권한 없으면 커스텀 된 로그인페이지로 튕김.
 
         http.csrf().disable();

@@ -3,6 +3,7 @@ package com.denny.shopmarket.common.config;
 import com.denny.shopmarket.common.convertor.StringToLocalDateTimeConverter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @ComponentScan(basePackages = "com.denny.shopmarket.common.controller")
+@EnableGlobalMethodSecurity(prePostEnabled = true) // @PreAuthorize 어노테이션 활성화 시킴
 public class ServletConfig implements WebMvcConfigurer {
 
     // 이 메서드는 View 단에서 LocalDateTime 을 알맞게 Convert 해주는 코드 같다.

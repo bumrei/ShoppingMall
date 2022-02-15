@@ -1,5 +1,6 @@
 package com.denny.shopmarket.security.service;
 
+import com.denny.shopmarket.security.dto.MemberDTO;
 import com.denny.shopmarket.security.mapper.MemberMapper;
 import com.denny.shopmarket.security.vo.MemberVo;
 import lombok.RequiredArgsConstructor;
@@ -37,13 +38,16 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         String[] authorities = memberVo.getRoleList().stream().map(memberRole -> memberRole.getRole()).toArray(String[]::new);
 
-        User result = (User) org.springframework.security.core.userdetails.User.builder() // User 로 다운 케스팅
-                .username(username)
-                .password(memberVo.getSellerPw())
-                .accountExpired(false) // 이 계정 다된 계정이야?
-                .accountLocked(false)  // 이 계정 잠긴 계정이야?
-                .authorities(authorities) // 이 계정 권한이 뭐야?
-                .build();
+        User result = new MemberDTO(memberVo);
+
+//        User result = (User) org.springframework.security.core.userdetails.User.builder() // User 로 다운 케스팅
+//                .username(username)
+//                .password(memberVo.getSellerPw())
+//                .accountExpired(false) // 이 계정 다된 계정이야?
+//                .accountLocked(false)  // 이 계정 잠긴 계정이야?
+//                .authorities(authorities) // 이 계정 권한이 뭐야?
+//                .build();
+
 
         return result;
 

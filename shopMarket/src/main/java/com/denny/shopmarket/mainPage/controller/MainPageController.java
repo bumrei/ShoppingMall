@@ -7,6 +7,7 @@ import com.denny.shopmarket.mainPage.service.TimeService;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,7 @@ public class MainPageController {
         model.addAttribute("time", time);
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/itemRegister")
     public void getItemRegister() {
 
@@ -61,7 +63,7 @@ public class MainPageController {
 
         redirectAttributes.addFlashAttribute("result", result);
 
-        return "redirect:/mainPage/itemList2";
+        return "redirect:/mainPage/itemList";
     }
 
     @GetMapping("/homeMainPage")

@@ -5,7 +5,7 @@
 <mapper namespace="com.denny.shopmarket.mainPage.mapper.MainPageMapper">
 
     <insert id="insertItem">
-        insert into tbl_item (sellerNo, itemNm, itemCateB, itemCateS, imageCnt) values (#{sellerNo},#{itemNm},#{itemCateB},#{itemCateS}, #{imageCnt})
+        insert into tbl_item (sellerId, itemNm, itemCateB, itemCateS, imageCnt) values (#{sellerId},#{itemNm},#{itemCateB},#{itemCateS}, #{imageCnt})
 
         <selectKey order="AFTER" resultType="int" keyProperty="itemNo">
             select last_insert_id()
@@ -20,7 +20,7 @@
 
     <resultMap id="itemMap" type="com.denny.shopmarket.mainPage.vo.ItemVo">
         <id property="itemNo" column="itemNo"></id>
-        <result property="sellerNo" column="sellerNo"></result>
+        <result property="sellerId" column="sellerId"></result>
         <result property="itemNm" column="itemNm"></result>
         <result property="itemCateB" column="itemCateB"></result>
         <result property="itemCateS" column="itemCateS"></result>

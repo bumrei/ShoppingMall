@@ -21,9 +21,9 @@ public class MainPageMapperTest {
 
     @Test
     public void insertTest() {
-        // sellerNo, itemNm, itemCateB, itemCateS
+        // sellerId, itemNm, itemCateB, itemCateS
         ItemVo itemVo = ItemVo.builder()
-                .sellerNo(1)
+                .sellerId("1")
                 .itemNm("테스트")
                 .itemCateB("cateB2")
                 .itemCateS("cateS3")
