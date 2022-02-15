@@ -1,5 +1,6 @@
 <%@include file="../includes/header.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 <!-- Header -->
@@ -37,8 +38,8 @@
         <div id="temp"></div>
 
         <div class="form-group">
-            <label for="sellerNo">Seller No.</label>
-            <input type="text" name="sellerNo" id="sellerNo" class="form-control">
+            <label for="sellerId">Seller No.</label>
+            <input type="text" name="sellerId" id="sellerId" class="form-control" value="<sec:authentication property="principal.sellerId"/>">
         </div>
 
         <div class="form-group">

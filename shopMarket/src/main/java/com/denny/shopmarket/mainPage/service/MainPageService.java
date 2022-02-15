@@ -21,7 +21,7 @@ public interface MainPageService {
     default ItemVo dtoToVo(ItemDTO itemDTO) {
 
         ItemVo itemVo = ItemVo.builder()
-                .sellerNo(itemDTO.getSellerNo())
+                .sellerId(itemDTO.getSellerId())
                 .itemNo(itemDTO.getItemNo())
                 .itemNm(itemDTO.getItemNm())
                 .itemCateB(itemDTO.getItemCateB())
@@ -53,7 +53,7 @@ public interface MainPageService {
     default ItemDTO voToDto(ItemVo itemVo) {
 
         ItemDTO itemDTO = ItemDTO.builder()
-                .sellerNo(itemVo.getSellerNo())
+                .sellerId(itemVo.getSellerId())
                 .itemNo(itemVo.getItemNo())
                 .itemNm(itemVo.getItemNm())
                 .itemCateB(itemVo.getItemCateB())

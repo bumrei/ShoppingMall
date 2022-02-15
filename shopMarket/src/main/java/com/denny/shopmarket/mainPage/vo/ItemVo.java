@@ -15,7 +15,7 @@ import java.util.List;
 public class ItemVo {
 
     private int itemNo;
-    private int sellerNo;
+    private String sellerId;
     private String itemNm;
     private String itemCateB;
     private String itemCateS;

@@ -15,7 +15,7 @@ import java.util.List;
 public class ItemDTO {
 
     private int itemNo;
-    private int sellerNo;
+    private String sellerId;
     private String itemNm;
     private String itemCateB;
     private String itemCateS;

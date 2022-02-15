@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: bumre
@@ -12,5 +13,14 @@
 </head>
 <body>
 <h1>doAll</h1>
+
+<sec:authorize access="isAnonymous()">
+    <a href="/customLogin">Login plz...</a>
+</sec:authorize>
+
+<sec:authorize access="isAuthenticated()">
+    <a href="/logout">Logout</a>
+</sec:authorize>
+
 </body>
 </html>
