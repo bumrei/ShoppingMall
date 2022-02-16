@@ -109,7 +109,35 @@ public class MainPageController {
 
         log.info("productInfo in Controller = " + productInfo);
 
+        List<UploadResponseDTO> dtoList = productInfo.getFiles();
+
+        log.info("dtoList = " + dtoList);
+
+        int itemImageCount =0;
+        int explanationCount =0;
+
+        for (UploadResponseDTO dto : dtoList) {
+
+            int j = 0;
+            int k = 0;
+
+            log.info("dto = " + dto);
+            log.info("dto = " + dto.getImageUsage());
+            log.info("===================");
+
+            if (dto.getImageUsage().equals("item") ) {
+                itemImageCount += 1;
+            } else if(dto.getImageUsage().equals("explanation") ) {
+                explanationCount += 1;
+            }
+        }
+
+        log.info("itemImageCount = " + itemImageCount);
+        log.info("explanationCount = " + explanationCount);
+
         model.addAttribute("productInfo", productInfo);
+        model.addAttribute("itemImageCount", itemImageCount);
+        model.addAttribute("explanationCount", explanationCount);
 
     }
 

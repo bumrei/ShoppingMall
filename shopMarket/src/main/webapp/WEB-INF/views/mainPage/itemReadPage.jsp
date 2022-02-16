@@ -18,6 +18,26 @@
                 </c:forEach>
             </div>
 
+<%--            <div class="col-2">--%>
+<%--                <!-- This is for the main image -->--%>
+<%--                <c:forEach items="${productInfo.files}" var="attach" varStatus="status">--%>
+<%--                    <c:if test="${attach.imageUsage == 'itemMain'}">--%>
+<%--                        <img src="/viewFile?file=${attach.fileLink}" width="100%" id="productImg">--%>
+<%--                    </c:if>--%>
+<%--                </c:forEach>--%>
+<%--                <div class="small-img-row">--%>
+<%--                    <c:forEach items="${productInfo.files}" var="attach" varStatus="status">--%>
+
+<%--                        <c:if test="${status.index > 0 && attach.imageUsage == 'item'}">--%>
+<%--                            <div class="small-img-col">--%>
+<%--                                <img src="/viewFile?file=${attach.fileLink}" width="100%" class="smallImg">--%>
+<%--                            </div>--%>
+<%--                        </c:if>--%>
+<%--                    </c:forEach>--%>
+<%--                </div>--%>
+
+<%--            </div>--%>
+
         </div>
         <div class="col-2">
             <!-- Selling information about the product -->
@@ -42,6 +62,68 @@
                 ipsa quae ab illo inventore veritatis</p>
         </div>
     </div>
+</div>
+
+<!-- ---- title ---- -->
+<div class="small-container">
+    <div class="row row-2">
+        <h2>Related Products</h2>
+        <a href="#">View More</a>
+    </div>
+</div>
+        <!-- ---- multi slide ---- -->
+<div class="slide_wrapper">
+    <ul class="slides">
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+    </ul>
+    <p class="controls">
+        <span class="prev"><</span>
+        <span class="next">></span>
+    </p>
+</div>
+
+<!-- ---- title ---- -->
+<div class="small-container">
+    <div class="row row-2">
+        <h2>Related Products</h2>
+        <a href="#">View More</a>
+    </div>
+</div>
+        <!-- ---- multi slide ---- -->
+<div class="slide_wrapper">
+    <ul class="slides1">
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="http://placehold.it/300x300" alt=""></li>
+    </ul>
+    <p class="controls1">
+        <span class="prev1"><</span>
+        <span class="next1">></span>
+    </p>
 </div>
 
 <!-- ---- title ---- -->
@@ -109,6 +191,8 @@
     </div>
 
 
+
+
 </div>
 
 
@@ -157,24 +241,98 @@
 <%@include file="../includes2/footer.jsp" %>
 
 <script>
-    let productImg = document.getElementById("productImg")
-    let smallImg = document.getElementsByClassName("smallImg")
+    let productImg = document.getElementById("productImg");
+    let smallImg = document.getElementsByClassName("smallImg");
+// 멀티 슬라이드
+    let slides = document.querySelector(".slides");
+    let slide = document.querySelectorAll('.slides li');
+    let currentIdx = 0;
+    let slideCount = slide.length;
+    let slideWidth = 300,
+        slideMargin = 30;
+    let prevBtn = document.querySelector(".prev");
+    let nextBtn = document.querySelector(".next");
+
+    let slides1 = document.querySelector(".slides1");
+    let slide1 = document.querySelectorAll('.slides1 li');
+
+    let prevBtn1 = document.querySelector(".prev1");
+    let nextBtn1 = document.querySelector(".next1");
+
+    let itemImage = '${productInfo.files}'
+    let itemImageCount = '${itemImageCount}'
 
 
-    smallImg[0].onclick = function () {
-        productImg.src = smallImg[0].src;
+
+    for(let i = 0; i < itemImageCount; i++) {
+        smallImg[i].onclick = function () {
+            productImg.src = smallImg[i].src;
+        }
     }
 
-    smallImg[1].onclick = function () {
-        productImg.src = smallImg[1].src;
+
+    // smallImg[0].onclick = function () {
+    //     productImg.src = smallImg[0].src;
+    // }
+    //
+    // smallImg[1].onclick = function () {
+    //     productImg.src = smallImg[1].src;
+    // }
+    //
+    // smallImg[2].onclick = function () {
+    //     productImg.src = smallImg[2].src;
+    // }
+    //
+    // smallImg[3].onclick = function () {
+    //     productImg.src = smallImg[3].src;
+    // }
+
+// 멀티 슬라이드
+    slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
+    slides1.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
+
+
+
+    function moveSlide(num) {
+        slides.style.left = -num * 330 + 'px';
+        currentIdx = num;
     }
 
-    smallImg[2].onclick = function () {
-        productImg.src = smallImg[2].src;
-    }
+    nextBtn.addEventListener('click', function() {
+        if( currentIdx < slide.length - 3) {
+            moveSlide(currentIdx + 1);
+        } else {
+            moveSlide(0)
+        }
+    });
 
-    smallImg[3].onclick = function () {
-        productImg.src = smallImg[3].src;
+    prevBtn.addEventListener('click', function() {
+        if( currentIdx > 0) {
+            moveSlide(currentIdx - 1);
+        } else {
+            moveSlide(slide.length - 3)
+        }
+    });
+
+    nextBtn1.addEventListener('click', function() {
+        if( currentIdx < slide.length - 3) {
+            moveSlide1(currentIdx + 1);
+        } else {
+            moveSlide1(0)
+        }
+    });
+
+    prevBtn1.addEventListener('click', function() {
+        if( currentIdx > 0) {
+            moveSlide1(currentIdx - 1);
+        } else {
+            moveSlide1(slide.length - 3)
+        }
+    });
+
+    function moveSlide1(num) {
+        slides1.style.left = -num * 330 + 'px';
+        currentIdx = num;
     }
 
 </script>
