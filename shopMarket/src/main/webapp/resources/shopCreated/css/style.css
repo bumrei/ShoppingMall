@@ -683,5 +683,92 @@ form a{
     transition: transform 1s;
 }
 
+/*----------- multi slider ------------*/
+
+.slide_wrapper{
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slides{
+    position: absolute;
+    left: 0; top: 0;
+    transition: left 0.3s ease-out;
+}
+
+.slides li:not(:last-child) {
+    float: left;
+    margin-right: 30px;
+}
+
+
+
+.controls{
+    width: 960px;
+    display: flex;
+    text-align: center;
+    margin-top: 130px;
+    justify-content: space-between;
+
+}
+
+.controls span{
+    position: relative;
+    z-index: 40;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.controls:hover span{
+    opacity: 1;
+}
+
+
+
+
+.slides1{
+    position: absolute;
+    left: 0; top: 0;
+    transition: left 0.3s ease-out;
+}
+
+.slides1 li:not(:last-child) {
+    float: left;
+    margin-right: 30px;
+}
+
+.controls1{
+    width: 960px;
+    display: flex;
+    text-align: center;
+    margin-top: 130px;
+    justify-content: space-between;
+
+}
+
+.controls1 span{
+    position: relative;
+    z-index: 40;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.controls1:hover span{
+    opacity: 1;
+}
+
 
 
