@@ -18,25 +18,25 @@
                 </c:forEach>
             </div>
 
-<%--            <div class="col-2">--%>
-<%--                <!-- This is for the main image -->--%>
-<%--                <c:forEach items="${productInfo.files}" var="attach" varStatus="status">--%>
-<%--                    <c:if test="${attach.imageUsage == 'itemMain'}">--%>
-<%--                        <img src="/viewFile?file=${attach.fileLink}" width="100%" id="productImg">--%>
-<%--                    </c:if>--%>
-<%--                </c:forEach>--%>
-<%--                <div class="small-img-row">--%>
-<%--                    <c:forEach items="${productInfo.files}" var="attach" varStatus="status">--%>
+            <%--            <div class="col-2">--%>
+            <%--                <!-- This is for the main image -->--%>
+            <%--                <c:forEach items="${productInfo.files}" var="attach" varStatus="status">--%>
+            <%--                    <c:if test="${attach.imageUsage == 'itemMain'}">--%>
+            <%--                        <img src="/viewFile?file=${attach.fileLink}" width="100%" id="productImg">--%>
+            <%--                    </c:if>--%>
+            <%--                </c:forEach>--%>
+            <%--                <div class="small-img-row">--%>
+            <%--                    <c:forEach items="${productInfo.files}" var="attach" varStatus="status">--%>
 
-<%--                        <c:if test="${status.index > 0 && attach.imageUsage == 'item'}">--%>
-<%--                            <div class="small-img-col">--%>
-<%--                                <img src="/viewFile?file=${attach.fileLink}" width="100%" class="smallImg">--%>
-<%--                            </div>--%>
-<%--                        </c:if>--%>
-<%--                    </c:forEach>--%>
-<%--                </div>--%>
+            <%--                        <c:if test="${status.index > 0 && attach.imageUsage == 'item'}">--%>
+            <%--                            <div class="small-img-col">--%>
+            <%--                                <img src="/viewFile?file=${attach.fileLink}" width="100%" class="smallImg">--%>
+            <%--                            </div>--%>
+            <%--                        </c:if>--%>
+            <%--                    </c:forEach>--%>
+            <%--                </div>--%>
 
-<%--            </div>--%>
+            <%--            </div>--%>
 
         </div>
         <div class="col-2">
@@ -71,23 +71,23 @@
         <a href="#">View More</a>
     </div>
 </div>
-        <!-- ---- multi slide ---- -->
+<!-- ---- multi slide ---- -->
 <div class="slide_wrapper">
     <ul class="slides">
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-2.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-4.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-2.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-4.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-2.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
     </ul>
     <p class="controls">
         <span class="prev"><</span>
@@ -102,97 +102,269 @@
         <a href="#">View More</a>
     </div>
 </div>
-        <!-- ---- multi slide ---- -->
+<!-- ---- multi slide ---- -->
 <div class="slide_wrapper">
     <ul class="slides1">
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
-        <li><img src="http://placehold.it/300x300" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-2.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-4.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-2.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-4.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-2.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-3.jpg" alt=""></li>
+        <li><img src="../../../resources/shopCreated/images/gallery-1.jpg" alt=""></li>
     </ul>
     <p class="controls1">
         <span class="prev1"><</span>
         <span class="next1">></span>
     </p>
 </div>
-
-<!-- ---- title ---- -->
+<%-- ============================== Multi-Tap Section ================================= --%>
 <div class="small-container">
-    <div class="row row-2">
-        <h2>Related Products</h2>
-        <a href="#">View More</a>
+    <div id="btfTab">
+        <ul class="tab-title">
+            <li onclick="setActive('detail')" name="detail">상품상세</li>
+            <li onclick="setActive('review')" name="review" class="active">상품평(2,300)</li>
+            <li onclick="setActive('qna')" name="qna">상품문의</li>
+            <li onclick="setActive('etc')" name="etc">배송/교환/반품 안내</li>
+        </ul>
+        <ul class="tab-content">
+            <!-- ============================================= 상품 상세 =============================================== -->
+            <li class="product-detail">
+                <!-- ---- title ---- -->
+                <div class="small-container">
+                    <div class="row">
+                        <h2>Product Explanation</h2>
+                    </div>
+                </div>
+
+                <div class="small-container">
+                    <div class="row">
+                        <div class="col-11">
+                            <img src="../../../resources/shopCreated/images/product-expl-1.jpg">
+                        </div>
+                        <div class="col-11">
+                            <img src="../../../resources/shopCreated/images/product-expl-2.jpg">
+                        </div>
+                        <div class="col-11">
+                            <img src="../../../resources/shopCreated/images/product-expl-3.jpg">
+                        </div>
+                        <div class="col-11">
+                            <img src="../../../resources/shopCreated/images/product-expl-4.jpg">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="product-review">
+                <!-- ================================================ 상품평 ======================================================= -->
+                <!-- ---- title ---- -->
+                <div class="small-container">
+                    <div class="comment-title">
+                        <h2>Comment Section</h2>
+                        <h6>동일한 상품에 대해 작성된 상품평으로, 판매자는 다를 수 있습니다.</h6>
+                        <div class="comment-star-summary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- --- Testimonials ------------------------ -->
+                <div id="testimonials">
+
+                    <!-- --- testimonials-box-container ---- -->
+                    <div class="testimonial-box-container">
+
+                        <!-- ------------------------- forEach part ------------------------ -->
+
+                        <!-- --- Box1 ---- -->
+                        <div class="testimonial-box">
+                            <!-- --- top ---- -->
+                            <div class="box-top">
+                                <!-- --- profile ----- -->
+                                <div class="profile">
+                                    <!-- --- img ----- -->
+                                    <div class="profile-img">
+                                        <img src="../../../resources/shopCreated/images/user-11.png">
+                                    </div>
+                                    <!-- --- name-and-username ----- -->
+                                    <div class="name-user">
+                                        <strong>Brian Maze</strong>
+                                        <span>@BraMazeing</span>
+                                    </div>
+                                </div>
+                                <!-- --- reviews ----- -->
+                                <div class="reviews">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- Comment section -->
+                            <div class="client-comment">
+                                <p>Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                        <!-- ------------------------- / forEach part ------------------------ -->
+
+
+                        <!-- --- Box2 ---- -->
+                        <div class="testimonial-box">
+                            <!-- --- top ---- -->
+                            <div class="box-top">
+                                <!-- --- profile ----- -->
+                                <div class="profile">
+                                    <!-- --- img ----- -->
+                                    <div class="profile-img">
+                                        <img src="../../../resources/shopCreated/images/user-22.png">
+                                    </div>
+                                    <!-- --- name-and-username ----- -->
+                                    <div class="name-user">
+                                        <strong>Brian Maze</strong>
+                                        <span>@BraMazeing</span>
+                                    </div>
+                                </div>
+                                <!-- --- reviews ----- -->
+                                <div class="reviews">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- Comment section -->
+                            <div class="client-comment">
+                                <p>Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. Lorem ipsum dolor sit
+                                    amet, consectetur adip Lorem ipsum dolor sit
+                                    amet, consectetur adip</p>
+                            </div>
+                        </div>
+
+                        <!-- --- Box3 ---- -->
+                        <div class="testimonial-box">
+                            <!-- --- top ---- -->
+                            <div class="box-top">
+                                <!-- --- profile ----- -->
+                                <div class="profile">
+                                    <!-- --- img ----- -->
+                                    <div class="profile-img">
+                                        <img src="../../../resources/shopCreated/images/user-33.png">
+                                    </div>
+                                    <!-- --- name-and-username ----- -->
+                                    <div class="name-user">
+                                        <strong>Brian Maze</strong>
+                                        <span>@BraMazeing</span>
+                                    </div>
+                                </div>
+                                <!-- --- reviews ----- -->
+                                <div class="reviews">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- Comment section -->
+                            <div class="client-comment">
+                                <p>Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. </p>
+                            </div>
+                        </div>
+
+                        <!-- --- Box4 ---- -->
+                        <div class="testimonial-box">
+                            <!-- --- top ---- -->
+                            <div class="box-top">
+                                <!-- --- profile ----- -->
+                                <div class="profile">
+                                    <!-- --- img ----- -->
+                                    <div class="profile-img">
+                                        <img src="../../../resources/shopCreated/images/user-11.png">
+                                    </div>
+                                    <!-- --- name-and-username ----- -->
+                                    <div class="name-user">
+                                        <strong>Brian Maze</strong>
+                                        <span>@BraMazeing</span>
+                                    </div>
+                                </div>
+                                <!-- --- reviews ----- -->
+                                <div class="reviews">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+
+                            <!-- Comment section -->
+                            <div class="client-comment">
+                                <p>Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat.
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </li>
+            <li class="product-qna">준비중</li>
+            <li class="product-etc">준비중</li>
+        </ul>
     </div>
-</div>
-
-<!-- ---- products ---- -->
-
-<div class="small-container">
-
-    <div class="row">
-        <div class="col-4">
-            <img src="../../../resources/shopCreated/images/product-1.jpg">
-            <h4>Red printed T-shrirt</h4>
-            <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p>$50.00</p>
-        </div>
-        <div class="col-4">
-            <img src="../../../resources/shopCreated/images/product-2.jpg">
-            <h4>Perfect Shoes</h4>
-            <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <p>$50.00</p>
-        </div>
-        <div class="col-4">
-            <img src="../../../resources/shopCreated/images/product-3.jpg">
-            <h4>Goody pants</h4>
-            <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>$50.00</p>
-        </div>
-        <div class="col-4">
-            <img src="../../../resources/shopCreated/images/product-4.jpg">
-            <h4>Blue printed T-shrirt</h4>
-            <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <p>$50.00</p>
-        </div>
-
-    </div>
-
-
-
-
 </div>
 
 
@@ -243,7 +415,7 @@
 <script>
     let productImg = document.getElementById("productImg");
     let smallImg = document.getElementsByClassName("smallImg");
-// 멀티 슬라이드
+    // 멀티 슬라이드
     let slides = document.querySelector(".slides");
     let slide = document.querySelectorAll('.slides li');
     let currentIdx = 0;
@@ -252,6 +424,12 @@
         slideMargin = 30;
     let prevBtn = document.querySelector(".prev");
     let nextBtn = document.querySelector(".next");
+
+
+    let currentIdx1 = 0;
+    let slideCount1 = slide.length;
+    let slideWidth1 = 300,
+        slideMargin1 = 30;
 
     let slides1 = document.querySelector(".slides1");
     let slide1 = document.querySelectorAll('.slides1 li');
@@ -263,8 +441,7 @@
     let itemImageCount = '${itemImageCount}'
 
 
-
-    for(let i = 0; i < itemImageCount; i++) {
+    for (let i = 0; i < itemImageCount; i++) {
         smallImg[i].onclick = function () {
             productImg.src = smallImg[i].src;
         }
@@ -287,10 +464,9 @@
     //     productImg.src = smallImg[3].src;
     // }
 
-// 멀티 슬라이드
+    // 멀티 슬라이드
     slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
     slides1.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
-
 
 
     function moveSlide(num) {
@@ -298,33 +474,34 @@
         currentIdx = num;
     }
 
-    nextBtn.addEventListener('click', function() {
-        if( currentIdx < slide.length - 3) {
+    nextBtn.addEventListener('click', function () {
+        if (currentIdx < slide.length - 3) {
             moveSlide(currentIdx + 1);
         } else {
             moveSlide(0)
         }
     });
 
-    prevBtn.addEventListener('click', function() {
-        if( currentIdx > 0) {
+    prevBtn.addEventListener('click', function () {
+        if (currentIdx > 0) {
             moveSlide(currentIdx - 1);
         } else {
             moveSlide(slide.length - 3)
         }
     });
 
-    nextBtn1.addEventListener('click', function() {
-        if( currentIdx < slide.length - 3) {
-            moveSlide1(currentIdx + 1);
+
+    nextBtn1.addEventListener('click', function () {
+        if (currentIdx1 < slide.length - 3) {
+            moveSlide1(currentIdx1 + 1);
         } else {
             moveSlide1(0)
         }
     });
 
-    prevBtn1.addEventListener('click', function() {
-        if( currentIdx > 0) {
-            moveSlide1(currentIdx - 1);
+    prevBtn1.addEventListener('click', function () {
+        if (currentIdx1 > 0) {
+            moveSlide1(currentIdx1 - 1);
         } else {
             moveSlide1(slide.length - 3)
         }
@@ -332,8 +509,24 @@
 
     function moveSlide1(num) {
         slides1.style.left = -num * 330 + 'px';
-        currentIdx = num;
+        currentIdx1 = num;
     }
+
+    let classes = document.querySelectorAll(".tab-title li")
+
+
+    function setActive(part) {
+        let doActive = document.getElementsByName(part);
+        if (doActive[0].classList == "active" ) {
+            return
+        } else {
+            for (let i = 0 ; i < classes.length; i++) {
+                classes[i].classList.remove('active')
+            }
+            doActive[0].className = 'active';
+        }
+    }
+
 
 </script>
 
