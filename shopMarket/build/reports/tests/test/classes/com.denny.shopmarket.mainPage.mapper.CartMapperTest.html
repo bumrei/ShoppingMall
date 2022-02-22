@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CartMapperTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CartMapperTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.denny.shopmarket.mainPage.mapper.html">com.denny.shopmarket.mainPage.mapper</a> &gt; CartMapperTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.114s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">selectToCart()</td>
+<td class="success">0.114s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2022-02-22 21:27:23,872 Test worker DEBUG Apache Log4j Core 2.17.1 initializing configuration XmlConfiguration[location=C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml]
+2022-02-22 21:27:23,882 Test worker DEBUG Installed 1 script engine
+2022-02-22 21:27:24,081 Test worker DEBUG Oracle Nashorn version: 11.0.12, language: ECMAScript, threading: Not Thread Safe, compile: true, names: [nashorn, Nashorn, js, JS, JavaScript, javascript, ECMAScript, ecmascript], factory class: jdk.nashorn.api.scripting.NashornScriptEngineFactory
+2022-02-22 21:27:24,081 Test worker DEBUG PluginManager 'Core' found 127 plugins
+2022-02-22 21:27:24,082 Test worker DEBUG PluginManager 'Level' found 0 plugins
+2022-02-22 21:27:24,085 Test worker DEBUG PluginManager 'Lookup' found 16 plugins
+2022-02-22 21:27:24,101 Test worker DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2022-02-22 21:27:24,111 Test worker DEBUG PluginManager 'TypeConverter' found 26 plugins
+2022-02-22 21:27:24,121 Test worker DEBUG PatternLayout$Builder(pattern=&quot;%d{yyyy-MM-dd hh:mm:ss} %5p [%c] %m%n&quot;, PatternSelector=null, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Replace=null, charset=&quot;UTF-8&quot;, alwaysWriteExceptions=&quot;null&quot;, disableAnsi=&quot;null&quot;, noConsoleNoAnsi=&quot;null&quot;, header=&quot;null&quot;, footer=&quot;null&quot;)
+2022-02-22 21:27:24,122 Test worker DEBUG PluginManager 'Converter' found 45 plugins
+2022-02-22 21:27:24,135 Test worker DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.ConsoleAppender].
+2022-02-22 21:27:24,145 Test worker DEBUG ConsoleAppender$Builder(target=&quot;SYSTEM_OUT&quot;, follow=&quot;null&quot;, direct=&quot;null&quot;, bufferedIo=&quot;null&quot;, bufferSize=&quot;null&quot;, immediateFlush=&quot;null&quot;, ignoreExceptions=&quot;null&quot;, PatternLayout(%d{yyyy-MM-dd hh:mm:ss} %5p [%c] %m%n), name=&quot;console&quot;, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null, ={})
+2022-02-22 21:27:24,147 Test worker DEBUG Starting OutputStreamManager SYSTEM_OUT.false.false
+2022-02-22 21:27:24,148 Test worker DEBUG Building Plugin[name=appenders, class=org.apache.logging.log4j.core.config.AppendersPlugin].
+2022-02-22 21:27:24,150 Test worker DEBUG createAppenders(={console})
+2022-02-22 21:27:24,150 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,154 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,155 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,157 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, name=&quot;jdbc.sqltiming&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,160 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,161 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,161 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,162 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, name=&quot;java.sql.Connection&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,163 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,164 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,164 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,167 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, name=&quot;java.sql.Statement&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,167 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,168 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,168 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,169 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, name=&quot;java.sql.PreparedStatement&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,171 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,172 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,172 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,174 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, name=&quot;java.sql.ResultSet&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,174 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,175 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,175 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,176 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;DEBUG&quot;, name=&quot;org.springframework.jdbc&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,176 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,177 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,177 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,178 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;WARN&quot;, name=&quot;org.springframework.security&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,178 Test worker DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,179 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,179 Test worker DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2022-02-22 21:27:24,179 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, name=&quot;com.zaxxer&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,180 Test worker DEBUG Building Plugin[name=AppenderRef, class=org.apache.logging.log4j.core.config.AppenderRef].
+2022-02-22 21:27:24,180 Test worker DEBUG createAppenderRef(ref=&quot;console&quot;, level=&quot;null&quot;, Filter=null)
+2022-02-22 21:27:24,181 Test worker DEBUG Building Plugin[name=root, class=org.apache.logging.log4j.core.config.LoggerConfig$RootLogger].
+2022-02-22 21:27:24,181 Test worker DEBUG createLogger(additivity=&quot;false&quot;, level=&quot;INFO&quot;, includeLocation=&quot;null&quot;, ={console}, ={}, Configuration(C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml), Filter=null)
+2022-02-22 21:27:24,183 Test worker DEBUG Building Plugin[name=loggers, class=org.apache.logging.log4j.core.config.LoggersPlugin].
+2022-02-22 21:27:24,184 Test worker DEBUG createLoggers(={jdbc.sqltiming, java.sql.Connection, java.sql.Statement, java.sql.PreparedStatement, java.sql.ResultSet, org.springframework.jdbc, org.springframework.security, com.zaxxer, root})
+2022-02-22 21:27:24,185 Test worker DEBUG Configuration XmlConfiguration[location=C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml] initialized
+2022-02-22 21:27:24,186 Test worker DEBUG Starting configuration XmlConfiguration[location=C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml]
+2022-02-22 21:27:24,187 Test worker DEBUG Started configuration XmlConfiguration[location=C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml] OK.
+2022-02-22 21:27:24,188 Test worker DEBUG Shutting down OutputStreamManager SYSTEM_OUT.false.false-1
+2022-02-22 21:27:24,189 Test worker DEBUG OutputStream closed
+2022-02-22 21:27:24,189 Test worker DEBUG Shut down OutputStreamManager SYSTEM_OUT.false.false-1, all resources released: true
+2022-02-22 21:27:24,189 Test worker DEBUG Appender DefaultConsole-1 stopped with status true
+2022-02-22 21:27:24,190 Test worker DEBUG Stopped org.apache.logging.log4j.core.config.DefaultConfiguration@71501f8c OK
+2022-02-22 21:27:24,245 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380
+2022-02-22 21:27:24,248 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=StatusLogger
+2022-02-22 21:27:24,250 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=ContextSelector
+2022-02-22 21:27:24,251 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=
+2022-02-22 21:27:24,252 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=com.zaxxer
+2022-02-22 21:27:24,252 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=java.sql.Connection
+2022-02-22 21:27:24,253 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=java.sql.ResultSet
+2022-02-22 21:27:24,254 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=java.sql.Statement
+2022-02-22 21:27:24,255 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=org.springframework.security
+2022-02-22 21:27:24,256 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=jdbc.sqltiming
+2022-02-22 21:27:24,257 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=java.sql.PreparedStatement
+2022-02-22 21:27:24,259 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Loggers,name=org.springframework.jdbc
+2022-02-22 21:27:24,260 Test worker DEBUG Registering MBean org.apache.logging.log4j2:type=69663380,component=Appenders,name=console
+2022-02-22 21:27:24,263 Test worker DEBUG org.apache.logging.log4j.core.util.SystemClock supports precise timestamps.
+2022-02-22 21:27:24,263 Test worker DEBUG Reconfiguration complete for context[name=69663380] at URI C:\Users\bumre\GitHub\ShoppingMall\shopMarket\build\resources\main\log4j2.xml (org.apache.logging.log4j.core.LoggerContext@14f3c8f5) with optional ClassLoader: null
+2022-02-22 21:27:24,264 Test worker DEBUG Shutdown hook enabled. Registering a new one.
+2022-02-22 21:27:24,264 Test worker DEBUG LoggerContext[name=69663380, org.apache.logging.log4j.core.LoggerContext@14f3c8f5] started OK.
+2022-02-22 09:27:24  INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-22 21:27:24,363 Test worker DEBUG AsyncLogger.ThreadNameStrategy=UNCACHED (user specified null, default is UNCACHED)
+2022-02-22 21:27:24,363 Test worker DEBUG org.apache.logging.log4j.core.util.SystemClock supports precise timestamps.
+2022-02-22 09:27:24  INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2edd7407, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ca5090a, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7f82b165, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3bcaada0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7e728b92, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3a5b300f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5038b7b8, org.springframework.test.context.event.EventPublishingTestExecutionListener@3e71a7b2]
+2022-02-22 09:27:24  INFO [com.denny.shopmarket.mainPage.config.MainPageRootConfig] MainPageRootConfig.............
+2022-02-22 09:27:24  INFO [com.denny.shopmarket.mainPage.config.MainPageRootConfig] MainPageRootConfig.............
+2022-02-22 09:27:24  INFO [com.denny.shopmarket.mainPage.config.MainPageRootConfig] MainPageRootConfig.............
+2022-02-22 09:27:24  INFO [com.denny.shopmarket.mainPage.config.MainPageRootConfig] MainPageRootConfig.............
+2022-02-22 09:27:24  INFO [com.denny.shopmarket.mainPage.config.MainPageRootConfig] MainPageRootConfig.............
+2022-02-22 09:27:25 DEBUG [org.springframework.jdbc.datasource.DataSourceUtils] Fetching JDBC Connection from DataSource
+2022-02-22 09:27:25  INFO [com.denny.shopmarket.mainPage.mapper.CartMapperTest] CartVo(cartNo=1, itemNo=52, sellerId=admin5, itemNm=test, price=3000, itemCateB=A, itemCateS=a, quantity=1, cartUser=member1, orderDone=false, attachList=[ItemAttach(uuid=0c0f16a2-703f-4f04-9a25-054a752bd0b5, itemNo=52, filename=category-1.jpg, image=true, uploadPath=2022/02/16, imageUsage=itemMain)])
+2022-02-22 09:27:25  INFO [com.denny.shopmarket.mainPage.mapper.CartMapperTest] CartVo(cartNo=4, itemNo=49, sellerId=admin2, itemNm=이것도 샀당, price=5000, itemCateB=C, itemCateS=a, quantity=1, cartUser=member1, orderDone=false, attachList=[ItemAttach(uuid=36959073-54dd-4801-8e15-6be604e2ea51, itemNo=49, filename=product-11.jpg, image=true, uploadPath=2022/02/15, imageUsage=itemMain)])
+2022-02-22 09:27:25  INFO [com.denny.shopmarket.mainPage.mapper.CartMapperTest] CartVo(cartNo=5, itemNo=43, sellerId=admin2, itemNm=This also i bought, price=2000, itemCateB=C, itemCateS=a, quantity=1, cartUser=member1, orderDone=false, attachList=[ItemAttach(uuid=50e2fb5f-274c-4ac2-8028-ad18a12f50d5, itemNo=43, filename=product-9.jpg, image=true, uploadPath=2022/01/31, imageUsage=itemMain)])
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Warning: Nashorn engine is planned to be removed from a future JDK release
+[Test worker] INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+[Test worker] INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6854cf6d
+[Test worker] INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 2022. 2. 22. 오후 9:27:25</p>
+</div>
+</div>
+</body>
+</html>

@@ -53,7 +53,8 @@
                 <option>Small</option>
             </select>
             <input type="number" value="1" min="1">
-            <a href="" class="btn">Add To Cart</a>
+            <a href="javascript:addToCart()" class="btn btnToCart">Add To Cart</a>
+            <a href="" class="btn btnToPurchase">바로 구매</a>
 
             <h3>Product Details <i class="fa fa-indent"></i></h3>
             <br>
@@ -128,6 +129,7 @@
 <%-- ============================== Multi-Tap Section ================================= --%>
 <div class="small-container">
     <div id="btfTab">
+        <!-- 여기 플로팅 메뉴바로 만들어 줘야 한다. -->
         <ul class="tab-title">
             <li onclick="setActive('detail')" name="detail">상품상세</li>
             <li onclick="setActive('review')" name="review" class="active">상품평(2,300)</li>
@@ -441,8 +443,12 @@
     let itemImageCount = '${itemImageCount}'
 
 
+    console.log(itemImageCount)
+    // 아이템 상세조회에서 대표 이미지 부분 클릭으로 바꾸기.
+    // itemImageCount 가 0 이면 작동하지 않는다.
     for (let i = 0; i < itemImageCount; i++) {
         smallImg[i].onclick = function () {
+            console.log("작동 하니?")
             productImg.src = smallImg[i].src;
         }
     }
@@ -525,6 +531,12 @@
             }
             doActive[0].className = 'active';
         }
+    }
+
+    let productNo = '${productInfo.itemNo}'
+
+    function addToCart() {
+        console.log("product Number = ", productNo)
     }
 
 

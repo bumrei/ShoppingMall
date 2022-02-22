@@ -141,7 +141,7 @@ public class MainPageController {
 
     }
 
-    @GetMapping("/itemBasket")
+    @GetMapping("/itemCart")
     public void getItemBasket() {
 
     }

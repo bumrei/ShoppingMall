@@ -2,6 +2,7 @@ package com.denny.shopmarket.mainPage.mapper;
 
 import com.denny.shopmarket.common.config.RootConfig;
 import com.denny.shopmarket.mainPage.config.MainPageRootConfig;
+import com.denny.shopmarket.mainPage.vo.CartVo;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,7 @@ import java.util.List;
 public class MainPageMapperTest {
 
     @Autowired MainPageMapper mainPageMapper;
+
 
     @Test
     public void insertTest() {
@@ -64,5 +66,7 @@ public class MainPageMapperTest {
 
         log.info(itemVo);
     }
+
+
 
 }
