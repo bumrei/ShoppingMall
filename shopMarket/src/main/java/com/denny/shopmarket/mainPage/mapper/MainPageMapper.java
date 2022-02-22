@@ -1,5 +1,6 @@
 package com.denny.shopmarket.mainPage.mapper;
 
+import com.denny.shopmarket.mainPage.vo.CartVo;
 import com.denny.shopmarket.mainPage.vo.ItemAttach;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.denny.shopmarket.mainPage.mapper.CartMapper">
+
+    <insert id="insertToCart">
+        insert into tbl_cart(itemNo, sellerId, itemNm, price, itemCateB, itemCateS, quantity, cartUser)
+        values(#{itemNo}, #{sellerId}, #{itemNm},#{price}, #{itemCateB},#{itemCateS}, #{quantity}, #{cartUser})
+    </insert>
+
+    <select id="selectCartList" resultMap="cartMap">
+        select
+            *
+        from tbl_cart cart left join (select * from tbl_attach where imageUsage = 'itemMain') attach
+                                     on cart.itemNo = attach.itemNo
+        where cartUser = #{cartUser}
+    </select>
+
+    <resultMap id="cartMap" type="com.denny.shopmarket.mainPage.vo.CartVo">
+        <id property="cartNo" column="cartNo"></id>
+        <result property="itemNo" column="itemNo"></result>
+        <result property="sellerId" column="sellerId"></result>
+        <result property="itemNm" column="itemNm"></result>
+        <result property="price" column="price"></result>
+        <result property="itemCateB" column="itemCateB"></result>
+        <result property="itemCateS" column="itemCateS"></result>
+        <result property="quantity" column="quantity"></result>
+        <result property="cartUser" column="cartUser"></result>
+        <result property="orderDone" column="orderDone"></result>
+
+        <collection property="attachLists" resultMap="attachMap"></collection>
+
+    </resultMap>
+
+    <resultMap id="attachMap" type="com.denny.shopmarket.mainPage.vo.ItemAttach">
+        <result property="uuid" column="uuid"></result>
+        <result property="itemNo" column="itemNo"></result>
+        <result property="filename" column="filename"></result>
+        <result property="image" column="image"></result>
+        <result property="uploadPath" column="uploadPath"></result>
+        <result property="imageUsage" column="imageUsage"></result>
+    </resultMap>
+
+</mapper>
