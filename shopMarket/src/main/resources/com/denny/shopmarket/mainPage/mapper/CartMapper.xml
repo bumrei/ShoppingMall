@@ -17,6 +17,10 @@
         where cartUser = #{cartUser}
     </select>
 
+    <select id="selectOne" resultType="com.denny.shopmarket.mainPage.vo.CartVo">
+        select * from tbl_cart where cartUser = #{cartUser} and itemNo = #{itemNo}
+    </select>
+
     <resultMap id="cartMap" type="com.denny.shopmarket.mainPage.vo.CartVo">
         <id property="cartNo" column="cartNo"></id>
         <result property="itemNo" column="itemNo"></result>

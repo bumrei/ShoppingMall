@@ -3,63 +3,26 @@
 
 <!-- cart item details -->
 
-<div class="small-container cart-page">
+<div class="small-container cart-page ">
     <table>
+        <thead>
         <tr>
             <th>Product</th>
             <th>Quantity</th>
             <th>Price</th>
         </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="../../../resources/shopCreated/images/buy-1.jpg">
-                    <div>
-                        <p>Reds Printed T-Shirt</p>
-                        <small>Price: $50.00</small>
-                        <br>
-                        <a href="#">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1" min="1"></td>
-            <td>$50.00</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="../../../resources/shopCreated/images/buy-2.jpg">
-                    <div>
-                        <p>Reds Printed T-Shirt</p>
-                        <small>Price: $50.00</small>
-                        <br>
-                        <a href="#">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1" min="1"></td>
-            <td>$132.00</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="../../../resources/shopCreated/images/buy-3.jpg">
-                    <div>
-                        <p>Reds Printed T-Shirt</p>
-                        <small>Price: $50.00</small>
-                        <br>
-                        <a href="#">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1" min="1"></td>
-            <td>$75.00</td>
-        </tr>
+        </thead>
+        <tbody class="cartTableContent">
+
+        </tbody>
+
+
     </table>
 
     <div class="total-price">
 
         <table>
+            <tbody class="totalP">
             <tr>
                 <td>Subtotal</td>
                 <td>$257.00</td>
@@ -72,13 +35,113 @@
                 <td>Total</td>
                 <td>$260.00</td>
             </tr>
+            </tbody>
         </table>
 
     </div>
+    <a href="" class="btn btnToPurchase">바로 구매</a>
 </div>
 
 
 <%@include file="../includes2/footer.jsp" %>
+<script>
+    let userId = "member1"
+    let url = "/cart/list/" + userId
+
+    doFetchGet()
+
+    function doFetchGet() {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                addToTr(data)
+            })
+    }
+
+    function addToTr(data) {
+        console.log(data)
+        console.log(data.length)
+        let targetTr = document.querySelector(".cartTableContent")
+        let totalP = document.querySelector(".totalP")
+
+        if (data.length > 0) {
+
+            let str = ""
+            let totalPrice = 0;
+
+            for (let i = 0; i < data.length; i++) {
+                totalPrice += (data[i].quantity * data[i].price)
+                str += "<tr>"
+                str += "<td>"
+                str += "<div class='cart-info'>"
+                str += "<img src='/viewFile?file=" + data[i].filesCart[0].fileLink + "'>"
+                str += "<div>"
+                str += "<p>" + data[i].itemNm + "</p>"
+                str += "<small>Price: $" + data[i].price + "</small>"
+                str += "<br>"
+                str += "<a href='javascript:removeThis("+ data[i].cartNo +")'>Remove</a>"
+                str += "</div>"
+                str += "</div>"
+                str += "</td>"
+                str += "<td><input type='number' value='" + data[i].quantity + "' min='1'></td>"
+                str += "<td>" + (data[i].quantity * data[i].price) + "</td>"
+                str += "</tr>"
+            }
+
+            targetTr.innerHTML = str
+
+            let tax = totalPrice * 0.1
+            let strr = ""
+
+             strr += "<tr>"
+             strr += "<td>Subtotal</td>"
+             strr += "<td>$"+ totalPrice +"</td>"
+             strr += "</tr>"
+             strr += "<tr>"
+             strr += "<td>Tax</td>"
+             strr += "<td>$"+ tax +"</td>"
+             strr += "</tr>"
+             strr += "<tr>"
+             strr += "<td>Total</td>"
+             strr += "<td>$"+ (totalPrice + tax) +"</td>"
+             strr += "</tr>"
+            totalP.innerHTML = strr
+        } else {
+            let str = ""
+            str += "<tr >"
+            str += "<br>"
+            str += "<br>"
+            str += "<h3 style='margin-left: 20%'>장바구니가 비어있습니다.</h3>"
+            str += "<br>"
+            str += "<br>"
+            str += "</tr>"
+            targetTr.innerHTML = str
+
+            let strr = ""
+            strr += "<tr>"
+            strr += "<td>Subtotal</td>"
+            strr += "<td>$ 0</td>"
+            strr += "</tr>"
+            strr += "<tr>"
+            strr += "<td>Tax</td>"
+            strr += "<td>$ 0</td>"
+            strr += "</tr>"
+            strr += "<tr>"
+            strr += "<td>Total</td>"
+            strr += "<td>$ 0</td>"
+            strr += "</tr>"
+            totalP.innerHTML = strr
+        }
+    }
+
+    function removeThis(num) {
+        console.log("Cart Number = ", num)
+        // 저 num 을 사용해 tbl_cart 에서 delete 시켜 버리자.
+
+        // delete 후에 doFetchGet() 를 호출해주면 싹 사라질 것이다.
+    }
+</script>
+
 
 </body>
 </html>

@@ -2,6 +2,8 @@ package com.denny.shopmarket.mainPage.service;
 
 import com.denny.shopmarket.mainPage.dto.CartDTO;
 import com.denny.shopmarket.mainPage.mapper.CartMapper;
+import com.denny.shopmarket.mainPage.vo.CartVo;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -36,10 +38,23 @@ public class CartServiceImpl implements CartService{
         log.info("============= CartService addToCart =============");
         log.info("============= CartService addToCart =============");
 
-        int result = cartMapper.insertToCart(dtoToVo(cartDTO));
+        log.info("cartDTO " + cartDTO);
 
-        log.info(result);
+        CartVo cartOne = cartMapper.selectOne(dtoToVo(cartDTO));
 
-        return result;
+        log.info("cartOne " + cartOne);
+        log.info("cartOne " + cartOne);
+        log.info("cartOne " + cartOne);
+        log.info("cartOne " + cartOne);
+
+
+        if (cartOne == null) {
+            int result = cartMapper.insertToCart(dtoToVo(cartDTO));
+            log.info(result);
+            return result;
+        } else {
+            return 3;
+        }
+
     }
 }

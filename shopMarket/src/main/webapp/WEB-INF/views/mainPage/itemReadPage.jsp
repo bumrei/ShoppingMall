@@ -42,8 +42,8 @@
         <div class="col-2">
             <!-- Selling information about the product -->
             <p>Home / T-Shirt</p>
-            <h1>Red Printed T-Shirt by HRX</h1>
-            <h4>$50.00</h4>
+            <h3>${productInfo.itemNm}</h3>
+            <h4>$ ${productInfo.price}</h4>
             <select>
                 <option>Select Size</option>
                 <option>XXL</option>
@@ -52,8 +52,8 @@
                 <option>Medium</option>
                 <option>Small</option>
             </select>
-            <input type="number" value="1" min="1">
-            <a href="javascript:addToCart()" class="btn btnToCart">Add To Cart</a>
+            <input type="number" id="quantity" value="1" min="1">
+            <a href="javascript:addToCart()" class="btn btnToCart">장바구니에 담기</a>
             <a href="" class="btn btnToPurchase">바로 구매</a>
 
             <h3>Product Details <i class="fa fa-indent"></i></h3>
@@ -536,7 +536,37 @@
     let productNo = '${productInfo.itemNo}'
 
     function addToCart() {
+        let productQuantity = document.querySelector("#quantity").value
+
         console.log("product Number = ", productNo)
+
+        let url = "/cart"
+        let data = {
+            "itemNo": '${productInfo.itemNo}',
+            "sellerId": '${productInfo.sellerId}',
+            "itemNm": '${productInfo.itemNm}',
+            "price": '${productInfo.price}',
+            "itemCateB": '${productInfo.itemCateB}',
+            "itemCateS": '${productInfo.itemCateS}',
+            "quantity": productQuantity,
+            "cartUser": "member1"
+        }
+
+        fetch(url, {
+              method: "post"
+            , headers: {
+                "Content-Type": "application/json"
+              }
+            , body: JSON.stringify(data)
+        }).then((response) => response.json())
+            .then((data) => {
+                if (data == 1) {
+                    alert("장바구니에 추가 됐습니다.")
+
+                } else if(data == 3) {
+                    alert("이미 장바구니에 있는 제품입니다.")
+                }
+            })
     }
 
 

@@ -5,6 +5,7 @@ import com.denny.shopmarket.mainPage.dto.CartDTO;
 import com.denny.shopmarket.mainPage.vo.CartVo;
 import com.denny.shopmarket.mainPage.vo.ItemAttach;
 import lombok.Builder;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
