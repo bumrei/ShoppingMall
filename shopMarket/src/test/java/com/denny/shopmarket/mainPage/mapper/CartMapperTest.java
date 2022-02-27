@@ -53,4 +53,30 @@ public class CartMapperTest {
         list.forEach(cartVo -> log.info(cartVo));
     }
 
+    @Test
+    public void selectOneTest() {
+
+        CartVo cartVo = CartVo.builder()
+                .cartUser("member1")
+                .itemNo(41)
+                .build();
+
+        CartVo oneCart = cartMapper.selectOne(cartVo);
+
+        if (oneCart == null) {
+            log.info("비었다");
+            log.info("비었다");
+            log.info("비었다");
+            log.info("비었다");
+            log.info("비었다");
+        } else {
+            log.info("안에 있다.");
+            log.info("안에 있다.");
+            log.info("안에 있다.");
+            log.info("안에 있다.");
+            log.info("안에 있다.");
+        }
+
+    }
+
 }

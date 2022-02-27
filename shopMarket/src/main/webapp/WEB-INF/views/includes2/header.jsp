@@ -38,7 +38,7 @@
                 <li><a href="">Account</a></li>
             </ul>
         </nav>
-        <img src="../../../resources/shopCreated/images/cart.png" width="30px" height="30px">
+        <a href="/mainPage/itemCart"><img src="../../../resources/shopCreated/images/cart.png" width="30px" height="30px"></a>
         <img src="../../../resources/shopCreated/images/menu.png" class="menu-icon" onclick="javascript:menutoggle()">
     </div>
 </div>

@@ -9,4 +9,6 @@ public interface CartMapper {
     List<CartVo> selectCartList(String cartUser);
 
     int insertToCart(CartVo cartVo);
+
+    CartVo selectOne(CartVo cartVo);
 }

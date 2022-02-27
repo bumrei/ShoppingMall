@@ -118,13 +118,6 @@ public class MainPageController {
 
         for (UploadResponseDTO dto : dtoList) {
 
-            int j = 0;
-            int k = 0;
-
-            log.info("dto = " + dto);
-            log.info("dto = " + dto.getImageUsage());
-            log.info("===================");
-
             if (dto.getImageUsage().equals("item") ) {
                 itemImageCount += 1;
             } else if(dto.getImageUsage().equals("explanation") ) {

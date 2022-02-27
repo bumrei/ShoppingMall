@@ -27,7 +27,7 @@ public class CartController {
     }
 
     @PostMapping("")
-    public String addToCartList(@RequestBody CartDTO cartDTO) {
+    public int addToCartList(@RequestBody CartDTO cartDTO) {
 
         log.info("============= CartController addToCartList ==============");
         log.info("============= CartController addToCartList ==============");
@@ -36,10 +36,6 @@ public class CartController {
 
         int result = cartService.addToCart(cartDTO);
 
-        if (result == 0) {
-            return "Fail at adding to cart";
-        } else {
-            return "The item is added to cart";
-        }
+        return result;
     }
 }
