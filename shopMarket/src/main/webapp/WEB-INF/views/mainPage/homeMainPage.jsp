@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
 
@@ -32,19 +34,54 @@
                     <li><a href="#">Account</a></li>
                 </ul>
             </nav>
-            <a href=""><img src="../../../resources/shopCreated/images/cart.png" width="30px" height="30px"></a>
-            <img src="../../../resources/shopCreated/images/menu.png" class="menu-icon" onclick="javascript:menutoggle()">
+            <a href="/mainPage/itemCart"><img src="../../../resources/shopCreated/images/cart.png" width="30px" height="30px"></a>
+            <img src="../../../resources/shopCreated/images/menu.png" class="menu-icon"
+                 onclick="javascript:menutoggle()">
         </div>
 
-
-        <div class="row">
-            <div class="col-2">
-                <h1>Give Your Workout<br>A New Style</h1>
-                <p> wellcome on board!!<br>this is amazying shopping for where you can find the perfect and suit clothes for ya!!!! </p>
-                <a href="" class="btn">Explore Now &#8594;</a>
+        <div class="row-2">
+            <div class="searchArea">
+                <select name="itemCateB" id="itemCateB">
+                    <option value="가전제품">가전제품</option>
+                    <option value="주방용품">주방용품</option>
+                    <option value="남녀공용">남녀공용</option>
+                    <option value="스포츠">스포츠</option>
+                    <option value="자전거">자전거</option>
+                </select>
+                <input id="searchWrite" type="text">
+                <i class="fas fa-search"></i>
             </div>
-            <div class="col-2">
-                <img src="../../../resources/shopCreated/images/image1.png" alt="">
+            <div class="wrapper_banner">
+                <div class="banner-container">
+                    <div class="slide-image">
+                        <img src="../../../resources/shopCreated/images/bigBanner1.jpg">
+                    </div>
+                    <div class="slide-image">
+                        <img src="../../../resources/shopCreated/images/bigBanner2.jpg">
+                    </div>
+                    <div class="slide-image">
+                        <img src="../../../resources/shopCreated/images/bigBanner3.jpg">
+                    </div>
+                    <div class="slide-image">
+                        <img src="../../../resources/shopCreated/images/bigBanner2.jpg">
+                    </div>
+                    <div class="slide-image">
+                        <img src="../../../resources/shopCreated/images/bigBanner1.jpg">
+                    </div>
+                    <div class="slide-image">
+                        <img src="../../../resources/shopCreated/images/bigBanner2.jpg">
+                    </div>
+                </div>
+
+                <div class="slider-btn">
+                    <span class="prev position-top"><i class="fas fa-chevron-left"></i></span>
+                    <span class="next position-top right-0"><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+            <div class="navigation-dots">
+                <!-- <div class="single-dot active"></div>
+                <div class="single-dot"></div>
+                <div class="single-dot"></div> -->
             </div>
         </div>
     </div>
@@ -232,7 +269,8 @@
             <div class="col-2">
                 <p>Exclusively Available on ResStore</p>
                 <h1>Samrt Band 4</h1>
-                <small>this is the perfectto and amzino producto haha yeah excactly quite great i like this website amazing yeah whellcome hahahaha hohohohohoho</small>
+                <small>this is the perfectto and amzino producto haha yeah excactly quite great i like this website
+                    amazing yeah whellcome hahahaha hohohohohoho</small>
 
                 <a href="" class="btn">Buy Now &#8594;</a>
             </div>
@@ -321,6 +359,98 @@
 </div>
 
 <%@include file="../includes2/footer.jsp" %>
+<script>
+    const slideImage = document.querySelectorAll(".slide-image");
+    const slidesContainer = document.querySelector(".banner-container");
+
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const navigationDots = document.querySelector(".navigation-dots");
+
+    let numberOfImages = slideImage.length;
+
+    let currentSlide = 0;
+
+
+    // Set up the slider
+    function init() {
+
+        /*
+        slideImage[0] = 0
+        slideImage[1] = 100%
+        slideImage[2] = 200%
+        */
+        slideImage.forEach((img, i) => {
+            img.style.left = i * 100 + "%";
+        });
+
+        slideImage[0].classList.add("active")
+
+        createNavigationDots()
+    }
+
+    init();
+
+    // Create navigation dots
+    function createNavigationDots() {
+        for(let i = 0; i < numberOfImages; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("single-dot");
+            navigationDots.appendChild(dot);
+
+            dot.addEventListener("click", () => {
+                goToSlide(i);
+            })
+
+        }
+
+        navigationDots.children[0].classList.add("active");
+    }
+
+    // Next Button
+    nextBtn.addEventListener("click", () => {
+        if(currentSlide >= numberOfImages - 1) {
+            goToSlide(0);
+            return
+        }
+        currentSlide++;
+        goToSlide(currentSlide);
+    });
+
+    // Prev Button
+    prevBtn.addEventListener("click", () => {
+        if(currentSlide <= 0) {
+            goToSlide(numberOfImages - 1);
+            return
+        }
+        currentSlide--;
+        goToSlide(currentSlide);
+    });
+
+    // Got To Slide
+    function goToSlide(slideNumber) {
+        let slideWidth = slideImage[0].clientWidth;
+        slidesContainer.style.transform = "translateX(-" + slideWidth * slideNumber  + "px)";
+
+        currentSlide = slideNumber;
+
+        setActiveClass();
+    }
+
+    // Set Active Class
+    function setActiveClass() {
+
+        // Set active class for slide Image
+        let currentActive = document.querySelector(".slide-image.active");
+        currentActive.classList.remove("active");
+        slideImage[currentSlide].classList.add("active")
+
+        // Set active class for navigation dots
+        let currentDot = document.querySelector(".single-dot.active");
+        currentDot.classList.remove("active");
+        navigationDots.children[currentSlide].classList.add("active")
+    }
+</script>
 
 
 </body>
