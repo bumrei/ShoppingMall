@@ -2,10 +2,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="small-container">
-
     <%------ Search Area ------%>
     <div class="row row-2">
         <h2>All Products</h2>
+        <div class="searchArea">
+            <select name="itemCateB" id="itemCateB">
+                <option value="" selected>전체</option>
+                <option value="가전제품">가전제품</option>
+                <option value="주방용품">주방용품</option>
+                <option value="남녀공용">남녀공용</option>
+                <option value="스포츠">스포츠</option>
+                <option value="자전거">자전거</option>
+            </select>
+            <input id="searchWrite" type="text">
+            <i class="fas fa-search" onclick="doSearch()"></i>
+        </div>
         <select>
             <option>Default Shorting</option>
             <option>short by price</option>
@@ -16,42 +27,53 @@
     </div>
     <%------ / Search Area ------%>
 
+
     <div class="list-container">
         <div class="left-col">
             <div class="sidebar">
                 <h2>Select Filters</h2>
                 <h3>Property Type</h3>
                 <div class="filter">
-                    <input type="checkbox"> <p>House</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>House</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Hostel</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Hostel</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Flat</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Flat</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Villa</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Villa</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Guest Suit</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Guest Suit</p> <span>(0)</span>
                 </div>
 
                 <h3>Amenities</h3>
                 <div class="filter">
-                    <input type="checkbox"> <p>Air Conditioning</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Air Conditioning</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Wifi</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Wifi</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Gym</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Gym</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Pool</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Pool</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Kitchen</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Kitchen</p> <span>(0)</span>
                 </div>
 
                 <div class="sidebar-link">
@@ -59,69 +81,89 @@
                 </div>
                 <h3>Amenities</h3>
                 <div class="filter">
-                    <input type="checkbox"> <p>Air Conditioning</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Air Conditioning</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Wifi</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Wifi</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Gym</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Gym</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Pool</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Pool</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Kitchen</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Kitchen</p> <span>(0)</span>
                 </div>
                 <h3>Amenities</h3>
                 <div class="filter">
-                    <input type="checkbox"> <p>Air Conditioning</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Air Conditioning</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Wifi</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Wifi</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Gym</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Gym</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Pool</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Pool</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Kitchen</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Kitchen</p> <span>(0)</span>
                 </div>
 
                 <h3>Amenities</h3>
                 <div class="filter">
-                    <input type="checkbox"> <p>Air Conditioning</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Air Conditioning</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Wifi</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Wifi</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Gym</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Gym</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Pool</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Pool</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Kitchen</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Kitchen</p> <span>(0)</span>
                 </div>
 
                 <h3>Amenities</h3>
                 <div class="filter">
-                    <input type="checkbox"> <p>Air Conditioning</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Air Conditioning</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Wifi</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Wifi</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Gym</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Gym</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Pool</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Pool</p> <span>(0)</span>
                 </div>
                 <div class="filter">
-                    <input type="checkbox"> <p>Kitchen</p> <span>(0)</span>
+                    <input type="checkbox">
+                    <p>Kitchen</p> <span>(0)</span>
                 </div>
 
 
@@ -161,10 +203,6 @@
     </div>
 
 
-
-
-
-
 </div>
 
 
@@ -187,6 +225,17 @@
     if (result && result !== '') {
         alert(result)
         window.history.replaceState(null, '', '/mainPage/itemList')
+    }
+
+    function doSearch() {
+        let searchWrite = document.querySelector("#searchWrite").value
+
+        if (searchWrite == "" || searchWrite.length == 0) {
+            alert("검색어를 입력해 주십시오.")
+            return
+        } else {
+            console.log(searchWrite)
+        }
     }
 </script>
 

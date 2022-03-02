@@ -42,6 +42,7 @@
         <div class="row-2">
             <div class="searchArea">
                 <select name="itemCateB" id="itemCateB">
+                    <option value="" selected>전체</option>
                     <option value="가전제품">가전제품</option>
                     <option value="주방용품">주방용품</option>
                     <option value="남녀공용">남녀공용</option>
@@ -49,7 +50,7 @@
                     <option value="자전거">자전거</option>
                 </select>
                 <input id="searchWrite" type="text">
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" onclick="doSearch()"></i>
             </div>
             <div class="wrapper_banner">
                 <div class="banner-container">
@@ -450,6 +451,18 @@
         currentDot.classList.remove("active");
         navigationDots.children[currentSlide].classList.add("active")
     }
+
+    function doSearch() {
+        let searchWrite = document.querySelector("#searchWrite").value
+
+        if (searchWrite == "" || searchWrite.length == 0) {
+            alert("검색어를 입력해 주십시오.")
+            return
+        } else {
+            console.log(searchWrite)
+        }
+    }
+
 </script>
 
 

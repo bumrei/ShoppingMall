@@ -51,7 +51,7 @@
                 left join tbl_attach attach
                           on item.itemNo = attach.itemNo
         where attach.imageUsage = 'itemMain'
-        order by item.itemNo desc
+        order by item.itemNo desc limit 0, 9;
     </select>
 
     <select id="select" resultMap="itemMap">
@@ -63,6 +63,17 @@
                           on item.itemNo = attach.itemNo
         where item.itemNo = #{itemNo}
         order by item.itemNo desc
+    </select>
+
+    <select id="selectCode" parameterType="HashMap" resultType="map">
+        select
+             *
+        from
+             comm_code
+        where code_lvl = #{code_lvl}
+          <if test="parent_code != null">
+            and parent_code = #{parent_code};
+          </if>
     </select>
 
 

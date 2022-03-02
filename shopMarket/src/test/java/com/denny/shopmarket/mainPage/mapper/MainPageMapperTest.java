@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -65,6 +67,26 @@ public class MainPageMapperTest {
         ItemVo itemVo = mainPageMapper.select(itemNo);
 
         log.info(itemVo);
+    }
+
+    @Test
+    public void selectCodeTest() {
+        HashMap<String, Object> hashmap = new HashMap<>();
+
+        hashmap.put("code_lvl", 1);
+        hashmap.put("parent_code", null);
+
+        List<Map<String, Object>> strings = mainPageMapper.selectCode(hashmap);
+
+//        for (int i = 0; i < strings.size(); i++) {
+//            String s = strings.get(i);
+//            log.info(s);
+//        }
+        log.info(strings);
+
+
+
+
     }
 
 

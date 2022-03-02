@@ -9,7 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -69,4 +71,15 @@ public class MainPageServiceImpl implements MainPageService{
 
         return voToDto(mainPageMapper.select(itemNo));
     }
+
+    @Override
+    public List<Map<String, Object>> getCodeList(HashMap<String, Object> codeFinder) {
+        log.info("========== MainPageServiceImpl getCodeList REST =========");
+        log.info("========== MainPageServiceImpl getCodeList REST =========");
+
+        return mainPageMapper.selectCode(codeFinder);
+
+    }
+
+
 }
