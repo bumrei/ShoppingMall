@@ -5,7 +5,9 @@ import com.denny.shopmarket.mainPage.dto.ItemDTO;
 import com.denny.shopmarket.mainPage.vo.ItemAttach;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public interface MainPageService {
@@ -15,6 +17,8 @@ public interface MainPageService {
     List<ItemDTO> getList();
 
     ItemDTO getRead(int itemNo);
+
+    List<Map<String, Object>> getCodeList(HashMap<String, Object> codeFinder);
 
 
 

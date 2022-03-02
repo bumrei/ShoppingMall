@@ -4,7 +4,9 @@ import com.denny.shopmarket.mainPage.vo.CartVo;
 import com.denny.shopmarket.mainPage.vo.ItemAttach;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface MainPageMapper {
 
@@ -15,5 +17,9 @@ public interface MainPageMapper {
     List<ItemVo> selectList();
 
     ItemVo select(int itemNo);
+
+    List<Map<String, Object>> selectCode(HashMap<String, Object> codeFinder);
+
+
 
 }

@@ -49,21 +49,21 @@
         <!--Ajax 사용해서 만약 A 를 선택하면 소분류가 A 에 맞게 바뀌게끔 만들자.-->
         <!--여기서 그 CLM 에 있는 common-code 테이블 같은 기능을 사용하면 될듯 하다.-->
         <div class="form-group">
-            <label for="inputStatus">Item 대분류</label>
-            <select id="inputStatus" name="itemCateB" class="form-control custom-select">
-                <option selected disabled>Select one</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
+            <label for="itemCateB">Item 대분류</label>
+            <select id="itemCateB" name="itemCateB" class="form-control custom-select">
+                <option value="">Select one</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="inputStatus1">Item 소분류</label>
-            <select id="inputStatus1" name="itemCateS" class="form-control custom-select">
-                <option selected disabled>Select one</option>
-                <option>a</option>
-                <option>b</option>
-                <option>c</option>
+            <label for="itemCateS">Item 소분류</label>
+            <select id="itemCateS" name="itemCateS" class="form-control custom-select">
+                <option value="">Select one</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
             </select>
         </div>
 
@@ -74,11 +74,9 @@
                 <option>품절</option>
             </select>
         </div>
-
-
-        <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
-
     </form>
+
+    <button id="submitBtn" class="btn btn-primary">Submit</button>
 
     <div class="form-group">
         <label>제품 소개 미리보기 (image)</label>
@@ -100,8 +98,16 @@
 
     const uploadResultDiv1 = document.querySelector(".uploadResult1");
     const uploadResultDiv2 = document.querySelector(".uploadResult2");
+
+    let itemCateB = document.querySelector("#itemCateB");
+    let itemCateS = document.querySelector("#itemCateS");
+
+    const inputName = document.querySelector("#inputName");
+
     const form1 = document.querySelector("#form1")
     const temp = document.querySelector("#temp")
+
+
 
     document.querySelector("#submitBtn").addEventListener("click", (e) => {
         e.stopPropagation()
@@ -157,13 +163,31 @@
             str += `<input type= 'hidden' name='files[\${j}].image' value='\${image}'>`
             str += `<input type= 'hidden' name='files[\${j}].imageUsage' value='explanation'>`
 
-
         }
 
+        let itemCateBVal = itemCateB.options[itemCateB.selectedIndex].value
+        let itemCateSVal = itemCateS.options[itemCateS.selectedIndex].value
+
+        if (itemCateBVal == "" || itemCateSVal == "") {
+            alert("카테고리 비었습니다.")
+            return
+        } else if (uploadResultDiv1.querySelectorAll("div").length == 0) {
+            alert("메인 사진은 한장이라도 있어야 합니다.")
+            //removeTemp()
+            return
+        } else if (uploadResultDiv2.querySelectorAll("div").length < 3) {
+            alert("설명 글 이미지는 3장 이상이여야 합니다.")
+            //removeTemp()
+            return
+        } else if (inputName.value == "") {
+            alert("제품의 이름을 입력해 주세요.")
+            return
+        }
 
         temp.innerHTML += str
 
-        form1.submit()
+        form1.submit();
+
     }, false)
 
     document.querySelector("#uploadBtn1").addEventListener("click", (e) => {
@@ -280,6 +304,10 @@
 
     }, false)
 
+    function removeTemp() {
+        temp.innerHTML = ""
+    }
+
     function removeFile(fileLink, ele) {
         console.log("fileLink ", fileLink)
 
@@ -289,6 +317,31 @@
             targetDiv.remove()
         })
     }
+
+    function setCategories() {
+
+        let url = "/code/select"
+        let data = {
+            "code_lvl": 1 ,
+            "parent_code" : null
+        }
+
+        fetch(url, {
+            method: "post"
+            , headers: {
+                "Content-Type": "application/json"
+            }
+            , body: JSON.stringify(data)
+        }).then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+            })
+
+    }
+
+    setCategories()
+
+
 
 </script>
 
