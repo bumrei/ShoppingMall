@@ -44,14 +44,19 @@
 
 
     <select id="selectList" resultMap="itemMap">
-        select
-            *
-        from
-            tbl_item item
-                left join tbl_attach attach
-                          on item.itemNo = attach.itemNo
-        where attach.imageUsage = 'itemMain'
-        order by item.itemNo desc limit 0, 9;
+        select * from (select
+                           item.* ,
+                           attach.uuid ,
+                           attach.uploadPath ,
+                           attach.filename ,
+                           attach.image ,
+                           attach.imageUsage
+                       from
+                           tbl_item item
+                               left join tbl_attach attach
+                                         on item.itemNo = attach.itemNo
+                       where attach.imageUsage = 'itemMain'
+                       order by item.itemNo desc) z
     </select>
 
     <select id="select" resultMap="itemMap">

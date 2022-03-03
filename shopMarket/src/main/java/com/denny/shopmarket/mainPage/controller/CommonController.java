@@ -20,19 +20,19 @@ public class CommonController {
 
 
     @PostMapping("/code/select")
-    public List<String> optionValues(@RequestBody HashMap<String, Object> codeFinder) {
+    public List<Map<String, Object>> optionValues(@RequestBody HashMap<String, Object> codeFinder) {
         log.info("============= CommonController optionValues REST ==============");
         log.info("============= CommonController optionValues REST ==============");
 
-        List<String> codeInfo = new ArrayList<>();
+        //List<String> codeInfo = new ArrayList<>();
         List<Map<String, Object>> codeLists = mainPageService.getCodeList(codeFinder);
 
-        for (Map<String, Object> codeList : codeLists) {
-            log.info(codeList.get("code_kor"));
-            codeInfo.add(codeList.get("code_kor").toString());
-        }
+//        for (Map<String, Object> codeList : codeLists) {
+//            log.info(codeList.get("code_kor"));
+//            codeInfo.add(codeList.get("code_kor").toString());
+//        }
 
-        return codeInfo;
+        return codeLists;
     }
 
 }

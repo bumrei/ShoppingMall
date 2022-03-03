@@ -74,7 +74,6 @@ public class MainPageMapperTest {
         HashMap<String, Object> hashmap = new HashMap<>();
 
         hashmap.put("code_lvl", 1);
-        hashmap.put("parent_code", null);
 
         List<Map<String, Object>> strings = mainPageMapper.selectCode(hashmap);
 
