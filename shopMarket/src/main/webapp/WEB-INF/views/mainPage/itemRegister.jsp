@@ -50,20 +50,15 @@
         <!--여기서 그 CLM 에 있는 common-code 테이블 같은 기능을 사용하면 될듯 하다.-->
         <div class="form-group">
             <label for="itemCateB">Item 대분류</label>
-            <select id="itemCateB" name="itemCateB" class="form-control custom-select">
-                <option value="">Select one</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
+            <select id="itemCateB" data-lvl="1" name="itemCateB" onchange="setCategories(2)" class="form-control custom-select">
+
             </select>
         </div>
         <div class="form-group">
             <label for="itemCateS">Item 소분류</label>
-            <select id="itemCateS" name="itemCateS" class="form-control custom-select">
-                <option value="">Select one</option>
-                <option value="a">a</option>
-                <option value="b">b</option>
-                <option value="c">c</option>
+            <select id="itemCateS" data-lvl="2" name="itemCateS" class="form-control custom-select">
+                <option value="">대분류를 선택해 주십시오.</option>
+
             </select>
         </div>
 
@@ -106,8 +101,6 @@
 
     const form1 = document.querySelector("#form1")
     const temp = document.querySelector("#temp")
-
-
 
     document.querySelector("#submitBtn").addEventListener("click", (e) => {
         e.stopPropagation()
@@ -318,12 +311,21 @@
         })
     }
 
-    function setCategories() {
+    setCategories(1)
+
+
+    function setCategories(code_lvl) {
+        console.log(code_lvl)
+        let itemCateBVal = null
+        if (code_lvl == 2) {
+            itemCateBVal = itemCateB.options[itemCateB.selectedIndex].value
+        }
+        console.log(itemCateBVal)
 
         let url = "/code/select"
         let data = {
-            "code_lvl": 1 ,
-            "parent_code" : null
+            "code_lvl": code_lvl ,
+            "parent_code" : itemCateBVal
         }
 
         fetch(url, {
@@ -334,12 +336,33 @@
             , body: JSON.stringify(data)
         }).then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                makeOptionTag(data)
             })
+    }
+
+    function makeOptionTag(data) {
+
+        if (data == "") {
+            itemCateS.innerHTML = "<option value=''>대분류를 선택해 주십시오</option>"
+            return
+        }
+
+        let str = ""
+
+        str += "<option value=''>Select one</option>"
+        for (let i = 0; i < data.length; i++) {
+            str += "<option value='" + data[i]["code_kor"] + "'>"+ data[i]["code_kor"] +"</option>"
+        }
+
+        if (data[0]["code_lvl"] == 1) {
+            itemCateB.innerHTML = str
+        } else {
+            itemCateS.innerHTML = str
+        }
 
     }
 
-    setCategories()
+
 
 
 

@@ -463,6 +463,43 @@
         }
     }
 
+    let itemCateB = document.querySelector("#itemCateB");
+
+    setCategories(1)
+
+    function setCategories(code_lvl) {
+        let url = "/code/select"
+        let data = {
+            "code_lvl": code_lvl ,
+        }
+
+        fetch(url, {
+            method: "post"
+            , headers: {
+                "Content-Type": "application/json"
+            }
+            , body: JSON.stringify(data)
+        }).then((response) => response.json())
+            .then((data) => {
+                makeOptionTag(data)
+            })
+    }
+
+    function makeOptionTag(data) {
+
+        let str = ""
+
+        str += "<option value=''>전체</option>"
+        for (let i = 0; i < data.length; i++) {
+            str += "<option value='" + data[i]["code_kor"] + "'>"+ data[i]["code_kor"] +"</option>"
+        }
+
+        if (data[0]["code_lvl"] == 1) {
+            itemCateB.innerHTML = str
+        }
+
+    }
+
 </script>
 
 
