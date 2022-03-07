@@ -1,5 +1,6 @@
 package com.denny.shopmarket.mainPage.service;
 
+import com.denny.shopmarket.common.dto.PageRequestDTO;
 import com.denny.shopmarket.common.dto.UploadResponseDTO;
 import com.denny.shopmarket.mainPage.dto.ItemDTO;
 import com.denny.shopmarket.mainPage.vo.ItemAttach;
@@ -14,7 +15,7 @@ public interface MainPageService {
 
     int registerItem(ItemDTO itemDTO);
 
-    List<ItemDTO> getList();
+    List<ItemDTO> getList(PageRequestDTO pageRequestDTO);
 
     ItemDTO getRead(int itemNo);
 

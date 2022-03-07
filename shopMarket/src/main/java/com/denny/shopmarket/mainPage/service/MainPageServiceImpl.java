@@ -1,5 +1,6 @@
 package com.denny.shopmarket.mainPage.service;
 
+import com.denny.shopmarket.common.dto.PageRequestDTO;
 import com.denny.shopmarket.common.dto.UploadResponseDTO;
 import com.denny.shopmarket.mainPage.dto.ItemDTO;
 import com.denny.shopmarket.mainPage.mapper.MainPageMapper;
@@ -53,12 +54,12 @@ public class MainPageServiceImpl implements MainPageService{
     }
 
     @Override
-    public List<ItemDTO> getList() {
+    public List<ItemDTO> getList(PageRequestDTO pageRequestDTO) {
 
         log.info("========== MainPageServiceImpl getList =========");
         log.info("========== MainPageServiceImpl getList =========");
 
-        List<ItemDTO> itemDTOList = mainPageMapper.selectList().stream().map(itemVo -> voToDto(itemVo)).collect(Collectors.toList());
+        List<ItemDTO> itemDTOList = mainPageMapper.selectList(pageRequestDTO).stream().map(itemVo -> voToDto(itemVo)).collect(Collectors.toList());
 
         return itemDTOList;
     }

@@ -1,6 +1,7 @@
 package com.denny.shopmarket.mainPage.mapper;
 
 import com.denny.shopmarket.common.config.RootConfig;
+import com.denny.shopmarket.common.dto.PageRequestDTO;
 import com.denny.shopmarket.mainPage.config.MainPageRootConfig;
 import com.denny.shopmarket.mainPage.vo.CartVo;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
@@ -51,7 +52,12 @@ public class MainPageMapperTest {
 
     @Test
     public void selectListTest() {
-        List<ItemVo> list = mainPageMapper.selectList();
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .bigCategory("전체")
+                .searchWords("냉장고")
+                .build();
+
+        List<ItemVo> list = mainPageMapper.selectList(pageRequestDTO);
 
         for (ItemVo itemVo : list) {
             log.info("=========================");
@@ -82,9 +88,18 @@ public class MainPageMapperTest {
 //            log.info(s);
 //        }
         log.info(strings);
+    }
 
+    @Test
+    public void selectCountTest() {
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .bigCategory("전체")
+                .searchWords("냉장고")
+                .build();
 
+        int count = mainPageMapper.selectCount(pageRequestDTO);
 
+        log.info(count);
 
     }
 
