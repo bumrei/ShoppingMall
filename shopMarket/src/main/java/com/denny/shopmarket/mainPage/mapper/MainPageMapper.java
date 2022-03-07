@@ -1,5 +1,6 @@
 package com.denny.shopmarket.mainPage.mapper;
 
+import com.denny.shopmarket.common.dto.PageRequestDTO;
 import com.denny.shopmarket.mainPage.vo.CartVo;
 import com.denny.shopmarket.mainPage.vo.ItemAttach;
 import com.denny.shopmarket.mainPage.vo.ItemVo;
@@ -14,11 +15,13 @@ public interface MainPageMapper {
 
     int insertItemAttach(ItemAttach itemAttach);
 
-    List<ItemVo> selectList();
+    List<ItemVo> selectList(PageRequestDTO pageRequestDTO);
 
     ItemVo select(int itemNo);
 
     List<Map<String, Object>> selectCode(HashMap<String, Object> codeFinder);
+
+    int selectCount(PageRequestDTO pageRequestDTO);
 
 
 

@@ -34,23 +34,21 @@
                     <li><a href="#">Account</a></li>
                 </ul>
             </nav>
-            <a href="/mainPage/itemCart"><img src="../../../resources/shopCreated/images/cart.png" width="30px" height="30px"></a>
+            <a href="/mainPage/itemCart"><img src="../../../resources/shopCreated/images/cart.png" width="30px"
+                                              height="30px"></a>
             <img src="../../../resources/shopCreated/images/menu.png" class="menu-icon"
                  onclick="javascript:menutoggle()">
         </div>
 
         <div class="row-2">
             <div class="searchArea">
-                <select name="itemCateB" id="itemCateB">
-                    <option value="" selected>전체</option>
-                    <option value="가전제품">가전제품</option>
-                    <option value="주방용품">주방용품</option>
-                    <option value="남녀공용">남녀공용</option>
-                    <option value="스포츠">스포츠</option>
-                    <option value="자전거">자전거</option>
-                </select>
-                <input id="searchWrite" type="text">
-                <i class="fas fa-search" onclick="doSearch()"></i>
+                <form id="form1" action="/mainPage/itemList" method="get" onsubmit="return false;">
+                    <select name="bigCategory" id="itemCateB" onkeypress="if(event.keyCode=='13'){event.preventDefault()}">
+
+                    </select>
+                    <input id="searchWrite" name="searchWords" type="text" onkeypress="if(event.keyCode=='13'){doSearch()}">
+                    <i class="fas fa-search" onclick="doSearch()"></i>
+                </form>
             </div>
             <div class="wrapper_banner">
                 <div class="banner-container">
@@ -363,6 +361,7 @@
 <script>
     const slideImage = document.querySelectorAll(".slide-image");
     const slidesContainer = document.querySelector(".banner-container");
+    const form1 = document.querySelector("#form1");
 
     const prevBtn = document.querySelector(".prev");
     const nextBtn = document.querySelector(".next");
@@ -394,7 +393,7 @@
 
     // Create navigation dots
     function createNavigationDots() {
-        for(let i = 0; i < numberOfImages; i++) {
+        for (let i = 0; i < numberOfImages; i++) {
             const dot = document.createElement("div");
             dot.classList.add("single-dot");
             navigationDots.appendChild(dot);
@@ -410,7 +409,7 @@
 
     // Next Button
     nextBtn.addEventListener("click", () => {
-        if(currentSlide >= numberOfImages - 1) {
+        if (currentSlide >= numberOfImages - 1) {
             goToSlide(0);
             return
         }
@@ -420,7 +419,7 @@
 
     // Prev Button
     prevBtn.addEventListener("click", () => {
-        if(currentSlide <= 0) {
+        if (currentSlide <= 0) {
             goToSlide(numberOfImages - 1);
             return
         }
@@ -431,7 +430,7 @@
     // Got To Slide
     function goToSlide(slideNumber) {
         let slideWidth = slideImage[0].clientWidth;
-        slidesContainer.style.transform = "translateX(-" + slideWidth * slideNumber  + "px)";
+        slidesContainer.style.transform = "translateX(-" + slideWidth * slideNumber + "px)";
 
         currentSlide = slideNumber;
 
@@ -459,7 +458,7 @@
             alert("검색어를 입력해 주십시오.")
             return
         } else {
-            console.log(searchWrite)
+            form1.submit()
         }
     }
 
@@ -470,7 +469,7 @@
     function setCategories(code_lvl) {
         let url = "/code/select"
         let data = {
-            "code_lvl": code_lvl ,
+            "code_lvl": code_lvl,
         }
 
         fetch(url, {
@@ -489,9 +488,9 @@
 
         let str = ""
 
-        str += "<option value=''>전체</option>"
+        str += "<option value='전체'>전체</option>"
         for (let i = 0; i < data.length; i++) {
-            str += "<option value='" + data[i]["code_kor"] + "'>"+ data[i]["code_kor"] +"</option>"
+            str += "<option value='" + data[i]["code_kor"] + "'>" + data[i]["code_kor"] + "</option>"
         }
 
         if (data[0]["code_lvl"] == 1) {

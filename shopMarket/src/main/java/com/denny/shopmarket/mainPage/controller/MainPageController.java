@@ -1,5 +1,6 @@
 package com.denny.shopmarket.mainPage.controller;
 
+import com.denny.shopmarket.common.dto.PageRequestDTO;
 import com.denny.shopmarket.common.dto.UploadResponseDTO;
 import com.denny.shopmarket.mainPage.dto.ItemDTO;
 import com.denny.shopmarket.mainPage.service.MainPageService;
@@ -77,24 +78,30 @@ public class MainPageController {
         log.info("====== MainPageController getItemList ======");
         log.info("====== MainPageController getItemList ======");
 
-        String searchInfo = request.getParameter("shopSearch");
+        String bigCategory = request.getParameter("bigCategory");
+        String searchWords = request.getParameter("searchWords");
 
-        List<ItemDTO> itemDTOList = mainPageService.getList();
+        log.info(bigCategory);
+        log.info(searchWords);
 
-        for (ItemDTO itemDTO : itemDTOList) {
-            List<UploadResponseDTO> files = itemDTO.getFiles();
-            String thumbnail;
-            for (UploadResponseDTO dto : files) {
-                thumbnail = dto.getThumbnail();
-                itemDTO.setItemThumbnail(thumbnail);
-            }
-            log.info("============ controller Before =============");
-            log.info(itemDTO);
-        }
+        model.addAttribute("bigCategory", bigCategory);
+        model.addAttribute("searchWords", searchWords);
+
+//        List<ItemDTO> itemDTOList = mainPageService.getList(pageRequestDTO);
+//
+//        for (ItemDTO itemDTO : itemDTOList) {
+//            List<UploadResponseDTO> files = itemDTO.getFiles();
+//            String thumbnail;
+//            for (UploadResponseDTO dto : files) {
+//                thumbnail = dto.getThumbnail();
+//                itemDTO.setItemThumbnail(thumbnail);
+//            }
+//            log.info("============ controller Before =============");
+//            log.info(itemDTO);
+//        }
 
 
-        model.addAttribute("itemDTOList", itemDTOList);
-        model.addAttribute("searchInfo", searchInfo);
+        //model.addAttribute("itemDTOList", itemDTOList);
     }
 
     @GetMapping("/itemReadPage")
