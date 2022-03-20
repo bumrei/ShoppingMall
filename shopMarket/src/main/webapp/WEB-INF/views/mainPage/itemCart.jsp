@@ -69,7 +69,24 @@
             let str = ""
             let totalPrice = 0;
 
+
+
             for (let i = 0; i < data.length; i++) {
+
+                const tr = document.createElement("tr");
+                let td = document.createElement("td");
+                const input = document.createElement("input")
+                const div = document.createElement("div");
+                div.classList.add("cart-info");
+                const img = document.createElement("img");
+                img.src = "/viewFile?file=" + data[i].filesCart[0].fileLink;
+                div.appendChild(img);
+                td.appendChild(div);
+                tr.appendChild(td);
+
+                td = document.createElement()
+
+
                 totalPrice += (data[i].quantity * data[i].price)
                 str += "<tr>"
                 str += "<td>"
