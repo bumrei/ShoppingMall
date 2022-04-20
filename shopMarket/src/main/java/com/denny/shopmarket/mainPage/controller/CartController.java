@@ -31,6 +31,9 @@ public class CartController {
 
         log.info("============= CartController addToCartList ==============");
         log.info("============= CartController addToCartList ==============");
+        log.info("============= CartController addToCartList ==============");
+        log.info("============= CartController addToCartList ==============");
+        log.info("============= CartController addToCartList ==============");
 
         log.info("cartDTO = " + cartDTO);
 
